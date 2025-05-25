@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "4878f518-0ef3-4f65-a6b2-5ae917900823")
 	(paper "A4")
+	(title_block
+		(title "Placa de control transmisora")
+		(rev "Camila F. Vargas")
+		(company "Instituto Tecnologico de las Americas")
+	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Receptacle_USB2.0_14P"
 			(pin_names
