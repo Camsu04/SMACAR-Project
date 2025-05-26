@@ -1,0 +1,9 @@
+﻿Designator,Quantity,Value,Footprint,Package,MPN,DNP,Mount_Type,Description,Specifications,Manufacturer,Display
+J2,1,USB_C_Receptacle_USB2.0_14P,USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal,,,,smt,USB 2.0-only 14P Type-C Receptacle connector,,,
+MOLEX1,1,E-C SENSOR,Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical,,,,tht,,,,
+MOLEX2,1,PH ,Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical,,,,tht,,,,
+MOLEX3,1,TDS SENSOR,Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical,,,,tht,,,,
+MOLEX4,1,TEMP,Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical,,,,tht,,,,
+MOLEX5,1,LORAWAN,Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical,,,,tht,,,,
+"R1_5.6k1, R2_5.6k1, R3_10k1, R4_10k1",4,470R_0805_350mW,R_0805_2012Metric,,ERJ-P06J471V,,smt,"470R, >=350mW, 5%","470R, >=350mW, 5%",Panasonic,470R/350mW
+U2,1,ESP32-S3-DevKitC,ESP32-S3-DevKitC,,,,tht,ESP32-S3-DevKitC,,,
