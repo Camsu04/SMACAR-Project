@@ -1683,6 +1683,397 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Power_Protection:TVS0500DRV"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 2.54 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "TVS0500DRV"
+				(at 2.54 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+				(at 5.08 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+				(at -2.54 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "EMI, ESD, TVS protection transient"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "WSON*1EP*2x2mm*P0.65mm*EP1x1.6mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TVS0500DRV_0_0"
+				(rectangle
+					(start -11.43 2.54)
+					(end -5.08 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -8.255 2.54) (xy -8.255 3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -8.255 -2.54) (xy -8.255 -3.81) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy -1.778 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Det &"
+					(at -8.255 0.635 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "Drv"
+					(at -8.255 -1.27 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "TVS0500DRV_0_1"
+				(rectangle
+					(start -12.065 5.08)
+					(end 2.54 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 1.397) (xy -2.286 -1.524)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 0) (xy -5.08 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 1.778) (xy -1.778 -1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -0.889 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.127 -1.27) (xy -1.143 -1.651) (xy -1.143 -0.889) (xy -0.127 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 5.08) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -1.27) (xy -1.778 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TVS0500DRV_1_1"
+				(pin passive line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 7.62 270)
+					(length 2.54)
+					(hide yes)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 7.62 270)
+					(length 2.54)
+					(hide yes)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "SparkFun-Connectors:M04POLAR"
 			(pin_numbers
 				(hide yes)
@@ -2002,10 +2393,28 @@
 		(uuid "37f17160-b4ae-4946-b44d-2d3507bc7fdd")
 	)
 	(junction
+		(at 186.69 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "39f883e1-e030-4bd4-b8b3-962d8c3f4d53")
+	)
+	(junction
+		(at 80.01 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3d101d89-345b-48bf-8c51-880b7de3b34e")
+	)
+	(junction
 		(at 86.36 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8f71e93c-dc68-4e9d-9246-c6ee81fc67ca")
+	)
+	(junction
+		(at 73.66 27.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc00e5ef-7215-4198-919f-b37013c5b2f7")
 	)
 	(junction
 		(at 173.99 68.58)
@@ -2063,6 +2472,26 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 52.07) (xy 181.61 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e474ffc-e4b2-4fab-92f7-bfa5a6d94050")
+	)
+	(wire
+		(pts
+			(xy 73.66 27.94) (xy 82.55 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33654742-81ff-4e7d-b5f7-91c1c7d741a0")
+	)
+	(wire
+		(pts
 			(xy 186.69 81.28) (xy 182.88 81.28)
 		)
 		(stroke
@@ -2093,7 +2522,17 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 20.32) (xy 186.69 73.66)
+			(xy 181.61 31.75) (xy 181.61 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f1478dc-cda4-4781-9c33-ce518cb75246")
+	)
+	(wire
+		(pts
+			(xy 186.69 20.32) (xy 186.69 31.75)
 		)
 		(stroke
 			(width 0)
@@ -2123,7 +2562,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 27.94) (xy 82.55 27.94)
+			(xy 71.12 27.94) (xy 73.66 27.94)
 		)
 		(stroke
 			(width 0)
@@ -2153,6 +2592,16 @@
 	)
 	(wire
 		(pts
+			(xy 186.69 31.75) (xy 186.69 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ccbd4c2-eaa6-4042-89bd-77332c3413b8")
+	)
+	(wire
+		(pts
 			(xy 214.63 33.02) (xy 219.71 33.02)
 		)
 		(stroke
@@ -2163,7 +2612,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 71.12) (xy 86.36 71.12)
+			(xy 55.88 71.12) (xy 80.01 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2190,6 +2639,16 @@
 			(type default)
 		)
 		(uuid "7af0b26d-c21f-429d-af33-0a55a7acaa43")
+	)
+	(wire
+		(pts
+			(xy 80.01 71.12) (xy 86.36 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c234319-cf86-4ccb-9848-bc6606c29615")
 	)
 	(wire
 		(pts
@@ -2283,6 +2742,36 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 48.26) (xy 73.66 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf34686d-6801-4c1c-866b-ee6559ee5615")
+	)
+	(wire
+		(pts
+			(xy 181.61 31.75) (xy 186.69 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2ed6564-a8c2-437c-b6f7-2883e0046b09")
+	)
+	(wire
+		(pts
+			(xy 80.01 63.5) (xy 80.01 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d318a0b2-ec65-4311-9b1d-87f28957f9a8")
+	)
+	(wire
+		(pts
 			(xy 55.88 66.04) (xy 55.88 71.12)
 		)
 		(stroke
@@ -2371,6 +2860,16 @@
 		)
 		(uuid "f1c375c5-cf6d-4515-9186-c9f6f8c2e7bd")
 	)
+	(wire
+		(pts
+			(xy 80.01 48.26) (xy 73.66 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc26793a-3393-4bc5-bd5b-cf9a9900a12d")
+	)
 	(global_label "5V"
 		(shape input)
 		(at 82.55 27.94 0)
@@ -2455,6 +2954,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 181.61 55.88 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "62431505-6f31-4708-9123-198dd7a61a04")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 181.61 62.7357 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3159,7 +3680,7 @@
 			)
 		)
 		(property "Display" "470R/350mW"
-			(at 78.486 38.354 90)
+			(at 80.772 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3283,6 +3804,176 @@
 			(project ""
 				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:TVS0500DRV")
+		(at 181.61 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d78f9a03-ce1e-4338-865b-d760031afef3")
+		(property "Reference" "U3"
+			(at 185.42 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TVS0500DRV"
+			(at 185.42 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+			(at 186.69 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+			(at 179.07 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
+			(at 181.61 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "8c1e8f10-12e8-4e7f-b52b-cb11a4d434cb")
+		)
+		(pin "1"
+			(uuid "2c3e112c-1e76-4212-ad26-2d75b58f6c62")
+		)
+		(pin "4"
+			(uuid "491e1ea2-5c47-4401-8292-70b56b11f2f7")
+		)
+		(pin "7"
+			(uuid "a5a5a26b-63a1-41dc-950d-9ef7969a34af")
+		)
+		(pin "5"
+			(uuid "f34cd4b7-b23c-4153-9635-3c7724f50f8f")
+		)
+		(pin "2"
+			(uuid "681d1e12-f0b6-497d-96ab-afcc6bb23f4d")
+		)
+		(pin "3"
+			(uuid "0dd5fb8e-ae05-4a5e-95bf-71101a31e654")
+		)
+		(instances
+			(project "SMACAR RECEIVER BOARD"
+				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Power_Protection:TVS0500DRV")
+		(at 80.01 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "da9f98e7-7c67-46b1-b431-a0dcccc115dd")
+		(property "Reference" "U2"
+			(at 83.82 54.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TVS0500DRV"
+			(at 83.82 57.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+			(at 85.09 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+			(at 77.47 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Flat-Clamp Surge Protection Device. 5Vrwm, WSON-6"
+			(at 80.01 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "0333ab3a-b0e8-4647-95f9-7c5a6fdbce12")
+		)
+		(pin "1"
+			(uuid "f5ed7487-e074-4fae-9487-0ee7570330df")
+		)
+		(pin "4"
+			(uuid "5487fdd6-b067-4f45-a50f-06fc89ffcc2c")
+		)
+		(pin "7"
+			(uuid "14065c24-5b51-4c1d-8721-70edd1a0fece")
+		)
+		(pin "5"
+			(uuid "ca169f08-08bd-4f4e-9a4d-cc41de2b9220")
+		)
+		(pin "2"
+			(uuid "8b5b1d3d-2714-4172-9a13-3f576ff9eae1")
+		)
+		(pin "3"
+			(uuid "29956929-e11e-4711-9f53-0e8e34ff8b54")
+		)
+		(instances
+			(project ""
+				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
+					(reference "U2")
 					(unit 1)
 				)
 			)
