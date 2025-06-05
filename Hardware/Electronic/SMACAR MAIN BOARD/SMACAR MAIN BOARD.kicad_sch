@@ -4130,7 +4130,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "32cc3d40-6cbe-4f5c-86b5-d7becd3ee24d")
-		(property "Reference" "R2_5.6k1"
+		(property "Reference" "R2_5.1k1"
 			(at 78.486 38.354 90)
 			(effects
 				(font
@@ -4223,7 +4223,7 @@
 		(instances
 			(project "SMACAR MAIN BOARD"
 				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
-					(reference "R2_5.6k1")
+					(reference "R2_5.1k1")
 					(unit 1)
 				)
 			)
@@ -5039,7 +5039,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f6733c16-31a5-4bd3-a4d6-cc7b0aa5ec14")
-		(property "Reference" "R1_5.6k1"
+		(property "Reference" "R1_5.1k1"
 			(at 78.994 30.734 90)
 			(effects
 				(font
@@ -5132,7 +5132,7 @@
 		(instances
 			(project ""
 				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
-					(reference "R1_5.6k1")
+					(reference "R1_5.1k1")
 					(unit 1)
 				)
 			)
