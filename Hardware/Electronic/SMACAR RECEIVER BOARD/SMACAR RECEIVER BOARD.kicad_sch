@@ -5,144 +5,6 @@
 	(uuid "05ad7d58-e0d2-49fc-abf9-9678d4d14c0c")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Diode:SMF33A"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SMF33A"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Diode_SMD:D_SMF"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.vishay.com/doc?85881"
-				(at -1.27 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "200W unidirectional Transil Transient Voltage Suppressor, 33Vrwm, SMF"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode TVS voltage suppressor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "D*SMF*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SMF33A_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SMF33A_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "A1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Espressif:ESP32-S3-DevKitC"
 			(pin_names
 				(offset 1.016)
@@ -1182,6 +1044,148 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "SparkFun-Connector:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "SparkFun-Connector:1x02"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Basic 0.1\" PTH"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "SparkFun connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "SparkFun-Connectors:M04POLAR"
 			(pin_numbers
 				(hide yes)
@@ -1427,564 +1431,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "XUNPU TYPEC-306DDW-ARP16:2137160001"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at -12.7 20.9042 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "2137160001"
-				(at -12.7 -22.86 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "2137160001:MOLEX_2137160001"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "Molex"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "OPTION" "MOLEX_CONFIG"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Package" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/2137160001/Molex/view-part/?ref=eda"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "STANDARD" "Manufacturer Recommendations"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "PARTREV" "B"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/2137160001/Molex/view-part/?ref=snap"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "2137160001"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Through Hole, Right Angle"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MANUFACTURER" "Molex"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MAXIMUM_PACKAGE_HEIGHT" "3.36mm"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(symbol "2137160001_0_0"
-				(rectangle
-					(start -12.7 -20.32)
-					(end 12.7 20.32)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin bidirectional line
-					(at -17.78 17.78 0)
-					(length 5.08)
-					(name "CC1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -17.78 15.24 0)
-					(length 5.08)
-					(name "SBU1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -17.78 10.16 0)
-					(length 5.08)
-					(name "DA+"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A6"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -17.78 7.62 0)
-					(length 5.08)
-					(name "DA-"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A7"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -17.78 2.54 0)
-					(length 5.08)
-					(name "VBUS1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -17.78 0 0)
-					(length 5.08)
-					(name "VBUS2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A9"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -17.78 -2.54 0)
-					(length 5.08)
-					(name "VBUS3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -17.78 -5.08 0)
-					(length 5.08)
-					(name "VBUS4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B9"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 17.78 17.78 180)
-					(length 5.08)
-					(name "CC2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 17.78 15.24 180)
-					(length 5.08)
-					(name "SBU2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 17.78 10.16 180)
-					(length 5.08)
-					(name "DB+"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B6"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 17.78 7.62 180)
-					(length 5.08)
-					(name "DB-"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B7"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 2.54 180)
-					(length 5.08)
-					(name "GND1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 0 180)
-					(length 5.08)
-					(name "GND2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A12"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 -2.54 180)
-					(length 5.08)
-					(name "GND3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 -5.08 180)
-					(length 5.08)
-					(name "GND4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "B12"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 17.78 -10.16 180)
-					(length 5.08)
-					(name "SHIELD1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "SH1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 17.78 -12.7 180)
-					(length 5.08)
-					(name "SHIELD2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "SH2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 17.78 -15.24 180)
-					(length 5.08)
-					(name "SHIELD3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "SH3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 17.78 -17.78 180)
-					(length 5.08)
-					(name "SHIELD4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "SH4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers
@@ -2213,8 +1659,8 @@
 		)
 	)
 	(rectangle
-		(start 21.59 17.78)
-		(end 96.52 76.2)
+		(start 66.04 13.97)
+		(end 97.79 36.83)
 		(stroke
 			(width 0)
 			(type default)
@@ -2237,8 +1683,8 @@
 		(uuid 97d5135c-22a6-4f06-950a-65d5d7f2fb29)
 	)
 	(rectangle
-		(start 200.66 16.51)
-		(end 240.03 43.18)
+		(start 198.12 13.97)
+		(end 237.49 40.64)
 		(stroke
 			(width 0)
 			(type default)
@@ -2250,7 +1696,7 @@
 	)
 	(text "LORAWAN RECEPTOR\n"
 		(exclude_from_sim no)
-		(at 220.726 45.72 0)
+		(at 218.186 43.18 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2270,7 +1716,7 @@
 	)
 	(text "ALIMENTACION\n"
 		(exclude_from_sim no)
-		(at 62.992 79.756 0)
+		(at 82.55 39.624 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2279,88 +1725,16 @@
 		(uuid "46db7e41-db07-4c7f-98df-d7d8f5f8f79e")
 	)
 	(junction
-		(at 35.56 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "03b68512-ee5d-49d4-b060-38ff282d475f")
-	)
-	(junction
-		(at 71.12 48.26)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "15d24591-ebb6-4ff2-b51d-5788d6ac3912")
-	)
-	(junction
-		(at 71.12 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3742c2e0-9f35-47e6-aff3-4a48c8285423")
-	)
-	(junction
 		(at 142.24 20.32)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4494c9ee-f2d3-4d45-954f-0aca2054eef6")
 	)
 	(junction
-		(at 71.12 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "498b9cad-0a3a-4c6b-9bb9-afb6e14854af")
-	)
-	(junction
-		(at 71.12 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "585c37e5-fdb6-44b3-9b7a-02ff9c29159a")
-	)
-	(junction
-		(at 71.12 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "65d1b438-7c78-4f52-ac29-c240534d4f16")
-	)
-	(junction
-		(at 71.12 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "68ae8aa4-52dd-4f01-adf6-e70c167879f1")
-	)
-	(junction
-		(at 71.12 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8d38e562-efc3-4e70-b306-e84cf9247658")
-	)
-	(junction
-		(at 176.53 20.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9da530ee-7057-4acd-9adc-d649da0a1d24")
-	)
-	(junction
-		(at 86.36 27.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b0fa0e61-4c38-4fdd-90fc-824d64587a23")
-	)
-	(junction
-		(at 35.56 48.26)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bd6cfd20-a532-41fb-89ee-400d82452125")
-	)
-	(junction
 		(at 173.99 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d49b140e-0907-4788-a121-48488ff03bc9")
-	)
-	(junction
-		(at 35.56 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e0a6a0a7-6c04-469d-be52-25237dae2140")
 	)
 	(junction
 		(at 143.51 120.65)
@@ -2402,73 +1776,13 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 43.18) (xy 35.56 45.72)
+			(xy 81.28 27.94) (xy 86.36 27.94)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1ba9153a-6c1d-4f63-a3d9-b983f7b9f947")
-	)
-	(wire
-		(pts
-			(xy 35.56 48.26) (xy 35.56 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1fd62277-1fbf-4b6e-9f81-9add266401d5")
-	)
-	(wire
-		(pts
-			(xy 71.12 60.96) (xy 71.12 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2badc0a7-0895-421c-84cc-7f34b3e09a8e")
-	)
-	(wire
-		(pts
-			(xy 71.12 63.5) (xy 71.12 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30e51a12-4c12-4582-be39-5cdc9402f5b2")
-	)
-	(wire
-		(pts
-			(xy 71.12 27.94) (xy 74.93 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "333ae5d1-f7d0-42bb-ac86-e3f769b1d258")
-	)
-	(wire
-		(pts
-			(xy 71.12 45.72) (xy 71.12 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "334da9d5-6e90-4e78-8edc-2f22c65f72dd")
-	)
-	(wire
-		(pts
-			(xy 71.12 58.42) (xy 71.12 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "381fccff-03dc-437b-a7e8-18d081f193f8")
+		(uuid "18d48736-9f87-4c93-8d68-033235a2ec35")
 	)
 	(wire
 		(pts
@@ -2502,7 +1816,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 20.32) (xy 186.69 20.32)
+			(xy 144.78 20.32) (xy 186.69 20.32)
 		)
 		(stroke
 			(width 0)
@@ -2542,7 +1856,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 27.94) (xy 219.71 27.94)
+			(xy 212.09 25.4) (xy 217.17 25.4)
 		)
 		(stroke
 			(width 0)
@@ -2572,23 +1886,13 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 33.02) (xy 219.71 33.02)
+			(xy 212.09 30.48) (xy 217.17 30.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "6d8837f1-2d14-4432-b796-c57479084eb5")
-	)
-	(wire
-		(pts
-			(xy 86.36 35.56) (xy 86.36 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "72b0e12f-99a4-4eb5-8e64-dd43d6fadb4e")
 	)
 	(wire
 		(pts
@@ -2612,33 +1916,13 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 27.94) (xy 176.53 30.48)
+			(xy 81.28 25.4) (xy 86.36 25.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "81c31c49-5d70-4201-9216-6403b074e685")
-	)
-	(wire
-		(pts
-			(xy 24.13 26.67) (xy 24.13 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "86fc458d-6b5c-4bb6-97ec-b6e399f659c5")
-	)
-	(wire
-		(pts
-			(xy 71.12 50.8) (xy 71.12 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ac831a2-6044-4e4b-9d25-f0f9b8ea50c1")
+		(uuid "81728427-2ffb-4aab-9ccb-ba03ec45f37d")
 	)
 	(wire
 		(pts
@@ -2652,27 +1936,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 27.94) (xy 86.36 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8cf52a28-093e-4560-94d6-484bdf728ea3")
-	)
-	(wire
-		(pts
-			(xy 35.56 46.99) (xy 35.56 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "90af7d72-1a55-4adb-a766-35adea7cb946")
-	)
-	(wire
-		(pts
-			(xy 214.63 30.48) (xy 219.71 30.48)
+			(xy 212.09 27.94) (xy 217.17 27.94)
 		)
 		(stroke
 			(width 0)
@@ -2682,17 +1946,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 45.72) (xy 35.56 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "935e9697-ba01-4f85-96fd-4d44578ad112")
-	)
-	(wire
-		(pts
-			(xy 214.63 25.4) (xy 219.71 25.4)
+			(xy 212.09 22.86) (xy 217.17 22.86)
 		)
 		(stroke
 			(width 0)
@@ -2712,26 +1966,6 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 55.88) (xy 71.12 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "badfcd57-67fb-4e6b-a640-a32334298cbb")
-	)
-	(wire
-		(pts
-			(xy 29.21 46.99) (xy 35.56 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d330d752-ba70-404e-9f6e-ee5779250eb2")
-	)
-	(wire
-		(pts
 			(xy 175.26 81.28) (xy 173.99 81.28)
 		)
 		(stroke
@@ -2739,16 +1973,6 @@
 			(type default)
 		)
 		(uuid "d6d8e557-ec3f-4d60-b3b2-2e274b138719")
-	)
-	(wire
-		(pts
-			(xy 71.12 48.26) (xy 71.12 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "db8483a9-3981-4dc6-8318-d8ef0d1a9255")
 	)
 	(wire
 		(pts
@@ -2792,36 +2016,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 20.32) (xy 176.53 20.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ead0a851-3622-4d69-a003-6de11f711246")
-	)
-	(wire
-		(pts
-			(xy 34.29 27.94) (xy 35.56 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ebc58cc3-119e-47c5-ad43-f6b65c4b20ca")
-	)
-	(wire
-		(pts
-			(xy 71.12 43.18) (xy 71.12 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec51c2bf-8ba1-42d7-8382-ca578457e5e9")
-	)
-	(wire
-		(pts
 			(xy 143.51 120.65) (xy 153.67 120.65)
 		)
 		(stroke
@@ -2830,29 +2024,31 @@
 		)
 		(uuid "f1c375c5-cf6d-4515-9186-c9f6f8c2e7bd")
 	)
-	(wire
-		(pts
-			(xy 24.13 27.94) (xy 26.67 27.94)
+	(global_label "5V"
+		(shape input)
+		(at 86.36 25.4 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(uuid "05767af9-4b8b-4585-8285-ccd4b64c5aeb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 91.6433 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
 		)
-		(uuid "f49a409e-bfc2-46b6-bcca-44260e72f57d")
-	)
-	(wire
-		(pts
-			(xy 82.55 27.94) (xy 86.36 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffb5aaff-574a-4585-9cf6-8f37554e3cd1")
 	)
 	(global_label "SCL"
 		(shape input)
-		(at 219.71 27.94 0)
+		(at 217.17 25.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2862,7 +2058,7 @@
 		)
 		(uuid "39696503-b85c-49d0-9613-577c29535b28")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 226.2028 27.94 0)
+			(at 223.6628 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2896,7 +2092,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 219.71 33.02 0)
+		(at 217.17 30.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2906,7 +2102,7 @@
 		)
 		(uuid "8d1cefac-f9d1-4f0c-a40a-0f907c65ae64")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 224.9933 33.02 0)
+			(at 222.4533 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2940,7 +2136,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 219.71 30.48 0)
+		(at 217.17 27.94 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2950,7 +2146,29 @@
 		)
 		(uuid "a7080370-049e-4a7e-a50d-78a311035597")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 226.5657 30.48 0)
+			(at 224.0257 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 86.36 27.94 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c2a815d2-26e3-49cd-b704-14bddf54ca44")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 93.2157 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2984,7 +2202,7 @@
 	)
 	(global_label "SDA"
 		(shape input)
-		(at 219.71 25.4 0)
+		(at 217.17 22.86 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2994,7 +2212,7 @@
 		)
 		(uuid "dada4f9d-5d0a-419d-b8af-c43a32fba01f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 226.2633 25.4 0)
+			(at 223.7233 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3023,138 +2241,6 @@
 				)
 				(justify left)
 				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 71.12 67.31 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0099a37e-4210-40d8-a1f6-b1ba12214453")
-		(property "Reference" "#PWR01"
-			(at 71.12 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 71.12 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 71.12 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 71.12 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 71.12 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cd3275f6-a32b-4a13-93b1-d5d9eb421879")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 29.21 46.99 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0ee82ff5-39c7-411e-879d-992f483a8cf9")
-		(property "Reference" "#PWR02"
-			(at 29.21 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 29.21 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 29.21 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 29.21 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 29.21 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5a8fa335-c1bf-4836-938a-aae9856aef4d")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "#PWR02")
-					(unit 1)
-				)
 			)
 		)
 	)
@@ -3355,314 +2441,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 176.53 30.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1f854415-90b0-4f24-a220-859ca59ec394")
-		(property "Reference" "#PWR08"
-			(at 176.53 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 176.53 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 176.53 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 176.53 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 176.53 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e55873a9-e8c9-4cfc-9c5e-2d31d061cc88")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 86.36 26.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "259b76d7-ca8c-4662-b995-2bde5c1a0fa3")
-		(property "Reference" "#PWR04"
-			(at 86.36 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 86.36 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 86.36 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 86.36 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 86.36 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3e1b16cf-2421-4685-b3b9-0d9bfa0fb2d8")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 24.13 26.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "28682677-d9da-4d2a-9f48-b38652962621")
-		(property "Reference" "#PWR03"
-			(at 24.13 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 24.13 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 24.13 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 24.13 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e5c3a995-ce46-49a3-8aff-26a4399a0c1f")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_4ms_Resistor:470R_0805_350mW")
-		(at 30.48 27.94 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "32cc3d40-6cbe-4f5c-86b5-d7becd3ee24d")
-		(property "Reference" "R2_5.1k1"
-			(at 30.226 30.734 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "470R_0805_350mW"
-			(at 30.48 31.115 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 43.18 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 30.48 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "470R, >=350mW, 5%"
-			(at 30.48 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Specifications" "470R, >=350mW, 5%"
-			(at 38.354 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Panasonic"
-			(at 39.878 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ERJ-P06J471V"
-			(at 41.402 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Display" "470R/350mW"
-			(at 32.004 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b98fb041-bad2-4882-8740-6524626144ad")
-		)
-		(pin "1"
-			(uuid "131c6468-72e9-4e02-a6aa-d18653399149")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "R2_5.1k1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "SparkFun-Connectors:M04POLAR")
-		(at 209.55 30.48 0)
+		(at 207.01 27.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3671,7 +2451,7 @@
 		(fields_autoplaced yes)
 		(uuid "3cecebab-81e7-46f8-85cf-05b4e9306196")
 		(property "Reference" "J1"
-			(at 207.645 17.78 0)
+			(at 205.105 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3679,7 +2459,7 @@
 			)
 		)
 		(property "Value" "M04POLAR"
-			(at 207.645 20.32 0)
+			(at 205.105 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3687,7 +2467,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
-			(at 210.312 26.67 0)
+			(at 207.772 24.13 0)
 			(effects
 				(font
 					(size 0.508 0.508)
@@ -3696,7 +2476,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 30.48 0)
+			(at 207.01 27.94 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3704,7 +2484,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 209.55 30.48 0)
+			(at 207.01 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3948,259 +2728,6 @@
 		)
 	)
 	(symbol
-		(lib_id "XUNPU TYPEC-306DDW-ARP16:2137160001")
-		(at 53.34 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "abb3ccb5-f310-4ece-9be5-365d75a869ad")
-		(property "Reference" "J2"
-			(at 53.34 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2137160001"
-			(at 53.34 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "XUNPU TYPEC-306DDW-ARP16:MOLEX_2137160001"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MF" "Molex"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "OPTION" "MOLEX_CONFIG"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Package" "None"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Price" "None"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/2137160001/Molex/view-part/?ref=eda"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "B"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/2137160001/Molex/view-part/?ref=snap"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "2137160001"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Through Hole, Right Angle"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Molex"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "3.36mm"
-			(at 53.34 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "SH2"
-			(uuid "0b016128-eca2-4600-ae08-4913e131270b")
-		)
-		(pin "SH3"
-			(uuid "d28943e6-260e-402e-82ea-d9faf70e949a")
-		)
-		(pin "B6"
-			(uuid "6a88979b-0237-45d5-85c7-5e594cb59d5f")
-		)
-		(pin "B7"
-			(uuid "b96181b5-0326-42af-a3cd-cf88315c230d")
-		)
-		(pin "A12"
-			(uuid "9fbd9792-bf0f-4f68-bf4e-c520f395bda2")
-		)
-		(pin "B1"
-			(uuid "77fe228d-f8f3-4146-afde-4f53fb57173c")
-		)
-		(pin "B12"
-			(uuid "d3a3bbf2-df7e-41fc-a859-a2d534f7a0a4")
-		)
-		(pin "B8"
-			(uuid "81a413d4-4f37-4bfd-8950-f5fa223ca762")
-		)
-		(pin "SH1"
-			(uuid "afc6d5d8-f7a0-4553-ae10-e3f65bc9173c")
-		)
-		(pin "A1"
-			(uuid "6d4c70b0-0e9b-4ff0-aba2-e09447e6e18d")
-		)
-		(pin "SH4"
-			(uuid "3af401c4-535c-44a4-90d5-3ba675a62224")
-		)
-		(pin "A5"
-			(uuid "128ec13f-5d09-436f-ad18-077b14fde725")
-		)
-		(pin "B5"
-			(uuid "aaaa6119-93f0-48ec-bb07-bce58a6f423a")
-		)
-		(pin "A9"
-			(uuid "ffa24ea8-dbc1-4ee1-b813-7d5af3313614")
-		)
-		(pin "A6"
-			(uuid "ca35c68d-0e30-4376-807b-2688e437a4bd")
-		)
-		(pin "A8"
-			(uuid "9bd247b9-d2ef-4b8c-8564-2e76befe14ec")
-		)
-		(pin "B4"
-			(uuid "eb3ee693-88dc-4e7e-8a97-94e31dd511bd")
-		)
-		(pin "A7"
-			(uuid "66f87e8d-1d7d-462e-9742-927da9f4abe5")
-		)
-		(pin "A4"
-			(uuid "bdbc366e-7822-484d-862a-f5ee85ba9e21")
-		)
-		(pin "B9"
-			(uuid "1dd127dd-1019-4244-8a2a-5fc657e76450")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 138.43 20.32 90)
 		(unit 1)
@@ -4262,76 +2789,6 @@
 			(project "SMACAR RECEIVER BOARD"
 				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
 					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:SMF33A")
-		(at 86.36 31.75 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c349272d-15b6-4d1f-b0a1-332034fa3e9d")
-		(property "Reference" "D1"
-			(at 88.9 30.4799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SMF33A"
-			(at 88.9 33.0199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMF"
-			(at 81.28 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?85881"
-			(at 86.36 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "200W unidirectional Transil Transient Voltage Suppressor, 33Vrwm, SMF"
-			(at 86.36 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b5885b67-fcc7-4063-a03f-45d7b6778df4")
-		)
-		(pin "2"
-			(uuid "22587e57-d29c-47a4-b44a-825a4a68e232")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -4405,44 +2862,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:SMF33A")
-		(at 176.53 24.13 270)
+		(lib_id "SparkFun-Connector:Conn_01x02")
+		(at 76.2 27.94 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "da467e59-6fd3-4d9b-93ed-222d09f59fbe")
-		(property "Reference" "D2"
-			(at 179.07 22.8599 90)
+		(uuid "fd675a49-0b41-4d3c-bb06-2ea7a2e6ed71")
+		(property "Reference" "J2"
+			(at 76.2 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "SMF33A"
-			(at 179.07 25.3999 90)
+		(property "Value" "Conn_01x02"
+			(at 76.2 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMF"
-			(at 171.45 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?85881"
-			(at 176.53 22.86 0)
+		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
+			(at 76.2 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4450,8 +2896,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "200W unidirectional Transil Transient Voltage Suppressor, 33Vrwm, SMF"
-			(at 176.53 24.13 0)
+		(property "Datasheet" "~"
+			(at 76.2 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4459,173 +2905,8 @@
 				(hide yes)
 			)
 		)
-		(pin "1"
-			(uuid "428ac973-ac7a-4c3a-814c-236218fef407")
-		)
-		(pin "2"
-			(uuid "f51d8c43-6494-4bcb-8d3b-ea5b1e18902d")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 86.36 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e61318f3-78a3-4f19-8136-b0fb2ffdeabb")
-		(property "Reference" "#PWR07"
-			(at 86.36 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 86.36 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 86.36 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 86.36 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4304fccd-676a-4ece-bda3-55a7aa3c2dd5")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_4ms_Resistor:470R_0805_350mW")
-		(at 78.74 27.94 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f6733c16-31a5-4bd3-a4d6-cc7b0aa5ec14")
-		(property "Reference" "R1_5.1k1"
-			(at 78.994 25.654 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "470R_0805_350mW"
-			(at 78.74 31.115 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 91.44 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "470R, >=350mW, 5%"
-			(at 78.74 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Specifications" "470R, >=350mW, 5%"
-			(at 86.614 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Panasonic"
-			(at 88.138 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ERJ-P06J471V"
-			(at 89.662 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Display" "470R/350mW"
-			(at 80.264 49.53 90)
+		(property "Description" "Basic 0.1\" PTH"
+			(at 76.2 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4634,15 +2915,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "0f0ab03f-9948-4721-a827-a2109b776773")
+			(uuid "95e3d1f8-44f5-468b-a2a1-c8f4654b38ad")
 		)
 		(pin "1"
-			(uuid "826c3721-3e2b-497a-bff5-f970a8882648")
+			(uuid "67d43080-1075-49db-a848-6a32fa294f23")
 		)
 		(instances
 			(project "SMACAR RECEIVER BOARD"
 				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "R1_5.1k1")
+					(reference "J2")
 					(unit 1)
 				)
 			)
