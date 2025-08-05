@@ -1,0 +1,276 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_adc/adc_oneshot.h"
+#include "esp_adc/adc_cali.h"
+#include "esp_adc/adc_cali_scheme.h"
+#include "driver/gpio.h"
+#include "rom/ets_sys.h"
+#include "driver/uart.h"
+
+// --- DS18B20 OneWire ---
+#define DS18B20_GPIO      21
+
+// --- ADC Defines ---
+#define ADC_UNIT_ID           ADC_UNIT_1
+#define EC_ADC_CHANNEL        ADC_CHANNEL_3 // GPIO4
+#define PH_ADC_CHANNEL        ADC_CHANNEL_4 // GPIO5
+#define TDS_ADC_CHANNEL       ADC_CHANNEL_5 // GPIO6
+
+#define VREF                  3300.0
+#define ADC_MAX_READING       4095.0
+
+// UART Defines (ajusta los GPIO si lo necesitas)
+#define LORA_UART_NUM       UART_NUM_1
+#define LORA_UART_TXD       17      // TX del ESP32 al RX del Node
+#define LORA_UART_RXD       18      // RX del ESP32 al TX del Node
+#define LORA_UART_BAUDRATE  115200    // O ajusta según tu Node (puede ser 115200)
+#define LORA_UART_BUF_SIZE  256
+
+// ----------- Prototipos -----------
+float leer_temperatura_ds18b20(void);
+static float leer_adc_mV(adc_oneshot_unit_handle_t handle, adc_cali_handle_t cali, adc_channel_t canal);
+float calcular_ec(float, float);
+float calcular_ph(float, float);
+float calcular_tds(float, float);
+
+// ---------- Inicialización UART para LoRaWAN ----------
+void lorawan_uart_init()
+{
+    const uart_config_t uart_config = {
+        .baud_rate = LORA_UART_BAUDRATE,
+        .data_bits = UART_DATA_8_BITS,
+        .parity    = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
+    };
+    uart_driver_install(LORA_UART_NUM, LORA_UART_BUF_SIZE * 2, 0, 0, NULL, 0);
+    uart_param_config(LORA_UART_NUM, &uart_config);
+    uart_set_pin(LORA_UART_NUM, LORA_UART_TXD, LORA_UART_RXD, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+}
+
+void lorawan_uart_cmd(const char *cmd)
+{
+    uart_write_bytes(LORA_UART_NUM, cmd, strlen(cmd));
+    vTaskDelay(pdMS_TO_TICKS(50));
+}
+
+// ===================  APP MAIN  ===================
+void app_main(void)
+{
+    // --- Inicialización ADC ---
+    adc_oneshot_unit_handle_t adc_handle;
+    adc_oneshot_unit_init_cfg_t init_config = { .unit_id = ADC_UNIT_ID };
+    adc_oneshot_new_unit(&init_config, &adc_handle);
+
+    // Configuración de canales
+    adc_oneshot_chan_cfg_t chan_config = {
+        .bitwidth = ADC_BITWIDTH_DEFAULT,
+        .atten = ADC_ATTEN_DB_11,
+    };
+
+    adc_oneshot_config_channel(adc_handle, EC_ADC_CHANNEL, &chan_config);
+    adc_oneshot_config_channel(adc_handle, PH_ADC_CHANNEL, &chan_config);
+    adc_oneshot_config_channel(adc_handle, TDS_ADC_CHANNEL, &chan_config);
+
+    // Calibración por canal
+    adc_cali_handle_t cali_ec = NULL, cali_ph = NULL, cali_tds = NULL;
+    adc_cali_curve_fitting_config_t cali_config_ec = {
+        .unit_id = ADC_UNIT_ID, .chan = EC_ADC_CHANNEL, .atten = ADC_ATTEN_DB_11, .bitwidth = ADC_BITWIDTH_DEFAULT,
+    };
+    adc_cali_curve_fitting_config_t cali_config_ph = {
+        .unit_id = ADC_UNIT_ID, .chan = PH_ADC_CHANNEL, .atten = ADC_ATTEN_DB_11, .bitwidth = ADC_BITWIDTH_DEFAULT,
+    };
+    adc_cali_curve_fitting_config_t cali_config_tds = {
+        .unit_id = ADC_UNIT_ID, .chan = TDS_ADC_CHANNEL, .atten = ADC_ATTEN_DB_11, .bitwidth = ADC_BITWIDTH_DEFAULT,
+    };
+
+    if (adc_cali_create_scheme_curve_fitting(&cali_config_ec, &cali_ec) != ESP_OK) {
+        printf("Error calibrando EC\n"); return;
+    }
+    if (adc_cali_create_scheme_curve_fitting(&cali_config_ph, &cali_ph) != ESP_OK) {
+        printf("Error calibrando pH\n"); return;
+    }
+    if (adc_cali_create_scheme_curve_fitting(&cali_config_tds, &cali_tds) != ESP_OK) {
+        printf("Error calibrando TDS\n"); return;
+    }
+
+    // --- Inicializar DS18B20 ---
+    gpio_set_direction(DS18B20_GPIO, GPIO_MODE_INPUT_OUTPUT);
+
+    // --- Inicializar UART para LoRaWAN ---
+    lorawan_uart_init();
+
+    // --- Configurar LoRaWAN Node por UART ---
+    lorawan_uart_cmd("BEGIN\n");
+    lorawan_uart_cmd("SETFREQ:914900000\n");
+    lorawan_uart_cmd("SETEIRP:22\n");
+    lorawan_uart_cmd("SETBW:125000\n");
+    lorawan_uart_cmd("SETSF:12\n");
+    lorawan_uart_cmd("START\n");
+
+    printf("Transmisor LoRaWAN listo en UART. Enviando datos al nodo 2 cada 5s...\n");
+
+    while (1)
+    {
+        // Leer sensores
+        float temperatura = leer_temperatura_ds18b20();
+        float voltaje_ec  = leer_adc_mV(adc_handle, cali_ec, EC_ADC_CHANNEL);
+        float voltaje_ph  = leer_adc_mV(adc_handle, cali_ph, PH_ADC_CHANNEL);
+        float voltaje_tds = leer_adc_mV(adc_handle, cali_tds, TDS_ADC_CHANNEL);
+
+        float valor_ec  = calcular_ec(voltaje_ec, temperatura);
+        float valor_ph  = calcular_ph(voltaje_ph, temperatura);
+        float valor_tds = calcular_tds(voltaje_tds, temperatura);
+
+        // Formatea el string para transmitir al nodo 2
+        char mensaje[128];
+        snprintf(mensaje, sizeof(mensaje), "T:%.2fC,EC:%.2f,pH:%.2f,TDS:%.2f", temperatura, valor_ec, valor_ph, valor_tds);
+
+        // Incluye el destino (2) en el comando SEND
+        char comando[140];
+        snprintf(comando, sizeof(comando), "SEND:2,%s\n", mensaje);
+
+        printf("Enviando por LoRaWAN (UART):\n %s", comando);
+        lorawan_uart_cmd(comando);
+
+        uint8_t response[64];
+int rx_len = uart_read_bytes(LORA_UART_NUM, response, sizeof(response)-1, pdMS_TO_TICKS(200));
+if(rx_len > 0) {
+    response[rx_len] = 0;
+    printf("Respuesta Node: %s\n", response);
+}
+
+
+        // Imprimir local
+        printf("Voltaje EC: %.2f mV | Voltaje pH: %.2f mV | Voltaje TDS: %.2f mV\n", voltaje_ec, voltaje_ph, voltaje_tds);
+        printf("Temp: %.2f °C | EC: %.2f ms/cm | pH: %.2f | TDS: %.2f ppm\n",
+               temperatura, valor_ec, valor_ph, valor_tds);
+
+        vTaskDelay(pdMS_TO_TICKS(5000)); // Esperar 5 segundos
+    }
+
+    // --- Liberar calibración (nunca se ejecuta por el bucle) ---
+    adc_cali_delete_scheme_curve_fitting(cali_ec);
+    adc_cali_delete_scheme_curve_fitting(cali_ph);
+    adc_cali_delete_scheme_curve_fitting(cali_tds);
+}
+
+// ------------- ADC Y SENSORES --------------
+static float leer_adc_mV(adc_oneshot_unit_handle_t handle, adc_cali_handle_t cali, adc_channel_t canal)
+{
+    int adc_raw = 0, voltage = 0;
+    esp_err_t read_ret = adc_oneshot_read(handle, canal, &adc_raw);
+    if (read_ret != ESP_OK) {
+        printf("Error leyendo ADC canal %d\n", canal);
+        return 0;
+    }
+    esp_err_t cali_ret = adc_cali_raw_to_voltage(cali, adc_raw, &voltage);
+    if (cali_ret != ESP_OK) {
+        printf("Error calibrando ADC canal %d\n", canal);
+        return 0;
+    }
+    return (float)voltage; // en mV
+}
+
+// --- FÓRMULAS DE CONVERSIÓN ---
+float calcular_ec(float voltaje, float temperatura)
+{
+    float voltage = voltaje / 1000.0; // V
+    float ecValue = (133.42 * voltage * voltage * voltage - 255.86 * voltage * voltage + 857.39 * voltage) * 0.1;
+    float compensation = 1.0 + 0.0185 * (temperatura - 25.0);
+    return ecValue / compensation; // ms/cm
+}
+
+float calcular_ph(float voltaje, float temperatura)
+{
+    float voltage = voltaje / 1000.0; // V
+    float slope = -5.6548;  // Ajusta según calibración real
+    float intercept = 15.509;
+    float phValue = slope * voltage + intercept;
+    return phValue;
+}
+
+float calcular_tds(float voltaje, float temperatura)
+{
+    float voltage = voltaje / 1000.0; // V
+    float compensationCoefficient = 1.0 + 0.02 * (temperatura - 25.0);
+    float compensationVoltage = voltage / compensationCoefficient;
+    float tdsValue = (133.42 * compensationVoltage * compensationVoltage * compensationVoltage
+                      - 255.86 * compensationVoltage * compensationVoltage
+                      + 857.39 * compensationVoltage) * 0.5;
+    return tdsValue; // ppm
+}
+
+// --- Funciones DS18B20 ---
+static void delay_us(uint32_t us) { ets_delay_us(us); }
+
+static int ds18b20_reset() {
+    int r;
+    gpio_set_direction(DS18B20_GPIO, GPIO_MODE_OUTPUT);
+    gpio_set_level(DS18B20_GPIO, 0);
+    delay_us(480);
+    gpio_set_direction(DS18B20_GPIO, GPIO_MODE_INPUT);
+    delay_us(70);
+    r = gpio_get_level(DS18B20_GPIO);
+    delay_us(410);
+    return r == 0;
+}
+
+static void ds18b20_write_bit(int v) {
+    gpio_set_direction(DS18B20_GPIO, GPIO_MODE_OUTPUT);
+    gpio_set_level(DS18B20_GPIO, 0);
+    if (v) { delay_us(10); gpio_set_level(DS18B20_GPIO, 1); delay_us(55); }
+    else { delay_us(65); gpio_set_level(DS18B20_GPIO, 1); delay_us(5); }
+}
+
+static int ds18b20_read_bit(void) {
+    int r;
+    gpio_set_direction(DS18B20_GPIO, GPIO_MODE_OUTPUT);
+    gpio_set_level(DS18B20_GPIO, 0);
+    delay_us(3);
+    gpio_set_direction(DS18B20_GPIO, GPIO_MODE_INPUT);
+    delay_us(10);
+    r = gpio_get_level(DS18B20_GPIO);
+    delay_us(53);
+    return r;
+}
+
+static void ds18b20_write_byte(int data) {
+    for (int i = 0; i < 8; i++) {
+        ds18b20_write_bit(data & 1);
+        data >>= 1;
+    }
+}
+
+static int ds18b20_read_byte(void) {
+    int data = 0;
+    for (int i = 0; i < 8; i++) {
+        data >>= 1;
+        if (ds18b20_read_bit()) { data |= 0x80; }
+    }
+    return data;
+}
+
+float leer_temperatura_ds18b20(void)
+{
+    if (!ds18b20_reset()) {
+        printf("DS18B20 no detectado\n");
+        return 25.0;
+    }
+    ds18b20_write_byte(0xCC); // SKIP ROM
+    ds18b20_write_byte(0x44); // CONVERT T
+    vTaskDelay(pdMS_TO_TICKS(750));
+    if (!ds18b20_reset()) {
+        printf("DS18B20 no detectado post-conv\n");
+        return 25.0;
+    }
+    ds18b20_write_byte(0xCC);
+    ds18b20_write_byte(0xBE);
+    int temp_lsb = ds18b20_read_byte();
+    int temp_msb = ds18b20_read_byte();
+    int16_t temp = ((temp_msb << 8) | temp_lsb);
+    return (float)temp / 16.0;
+}
