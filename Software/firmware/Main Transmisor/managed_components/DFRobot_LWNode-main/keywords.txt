@@ -1,0 +1,77 @@
+#######################################
+# Syntax Coloring Map For DFRobot_GM60
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DFRobot_LWNode_IIC	KEYWORD1
+DFRobot_LWNode_UART	KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+setRxCB	KEYWORD2
+setRegion	KEYWORD2
+setAppEUI	KEYWORD2
+setAppKEY	KEYWORD2
+setDevType	KEYWORD2
+setDataRate	KEYWORD2
+setEIRP	KEYWORD2
+enableADR	KEYWORD2
+getDevEUI	KEYWORD2
+getDataRate	KEYWORD2
+setSubBand	KEYWORD2
+sendPacket	KEYWORD2
+setPacketType	KEYWORD2
+sleep	KEYWORD2
+isJoined	KEYWORD2
+readData	KEYWORD2
+getEIRP	KEYWORD2
+getNetID	KEYWORD2
+getDevAddr	KEYWORD2
+setLoRaAddr	KEYWORD2
+setFreq	KEYWORD2
+setBW	KEYWORD2
+setSF	KEYWORD2
+join	KEYWORD2
+start	KEYWORD2
+getRSSI	KEYWORD2
+getSNR	KEYWORD2
+
+#######################################
+# Instances (LITERAL1)
+#######################################
+
+EU868	LITERAL1
+CN470	LITERAL1
+US915	LITERAL1
+
+DR0	LITERAL1
+DR1	LITERAL1
+DR2	LITERAL1
+DR3	LITERAL1
+DR4	LITERAL1
+DR5	LITERAL1
+
+CLASS_A	LITERAL1
+CLASS_B	LITERAL1
+CLASS_C	LITERAL1
+
+DBM0	LITERAL1
+DBM2	LITERAL1
+DBM4	LITERAL1
+DBM6	LITERAL1
+DBM8	LITERAL1
+DBM10	LITERAL1
+DBM12	LITERAL1
+DBM14	LITERAL1
+DBM16	LITERAL1
+DBM18	LITERAL1
+DBM20	LITERAL1
+DBM22	LITERAL1
+
+UNCONFIRMED_PACKET	LITERAL1
+CONFIRMED_PACKET	LITERAL1

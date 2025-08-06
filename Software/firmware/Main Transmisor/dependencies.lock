@@ -1,0 +1,29 @@
+dependencies:
+  dernasherbrezon/sx127x:
+    component_hash: 97e3499f254372fab6b724e2eed4177167bd45cc68182d370dcb7956f2df00e8
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 4.0.1
+  idf:
+    source:
+      type: idf
+    version: 5.4.2
+  jgromes/radiolib:
+    component_hash: 7e367fd420aa66da05687e00dc3775c5891cd8236eee56d9d797d6eb04bb1918
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 7.2.1
+direct_dependencies:
+- dernasherbrezon/sx127x
+- idf
+- jgromes/radiolib
+manifest_hash: b5acdf8c3d701e479c500d8e39ac3d06880d83936dbf3c12c847106874d232b6
+target: esp32s3
+version: 2.0.0

@@ -9,6 +9,7 @@
 #include "driver/gpio.h"
 #include "rom/ets_sys.h"
 #include "driver/uart.h"
+#include "esp_log.h"  // <--- IMPORTANTE
 
 // --- DS18B20 OneWire ---
 #define DS18B20_GPIO      21
@@ -24,10 +25,12 @@
 
 // UART Defines (ajusta los GPIO si lo necesitas)
 #define LORA_UART_NUM       UART_NUM_1
-#define LORA_UART_TXD       17      // TX del ESP32 al RX del Node
-#define LORA_UART_RXD       18      // RX del ESP32 al TX del Node
-#define LORA_UART_BAUDRATE  115200    // O ajusta según tu Node (puede ser 115200)
-#define LORA_UART_BUF_SIZE  256
+#define LORA_UART_TXD       GPIO_NUM_17     // TX del ESP32 al RX del Node
+#define LORA_UART_RXD       GPIO_NUM_16     // RX del ESP32 al TX del Node
+#define LORA_UART_BAUDRATE  9600
+#define LORA_UART_BUF_SIZE  1024
+
+static const char *TAG = "LORA_TX"; // <--- DEFINIDO AQUI
 
 // ----------- Prototipos -----------
 float leer_temperatura_ds18b20(void);
@@ -44,17 +47,37 @@ void lorawan_uart_init()
         .data_bits = UART_DATA_8_BITS,
         .parity    = UART_PARITY_DISABLE,
         .stop_bits = UART_STOP_BITS_1,
-        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+        .source_clk = UART_SCLK_APB
     };
     uart_driver_install(LORA_UART_NUM, LORA_UART_BUF_SIZE * 2, 0, 0, NULL, 0);
     uart_param_config(LORA_UART_NUM, &uart_config);
     uart_set_pin(LORA_UART_NUM, LORA_UART_TXD, LORA_UART_RXD, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
 }
 
-void lorawan_uart_cmd(const char *cmd)
+void lorawan_uart_cmd(const char *cmd)  
 {
-    uart_write_bytes(LORA_UART_NUM, cmd, strlen(cmd));
-    vTaskDelay(pdMS_TO_TICKS(50));
+    uint8_t data[1024] = {0};           
+    int result = uart_write_bytes(LORA_UART_NUM, cmd, strlen(cmd));
+    if (result > 0)
+    {
+        ESP_LOGI(TAG, "Transmision UART Exitosa");
+        vTaskDelay(pdMS_TO_TICKS(2000));
+        result = uart_read_bytes(LORA_UART_NUM, data, 1024 - 1, pdMS_TO_TICKS(5000));
+        if (result >= 0)
+        {
+            ESP_LOGI(TAG, "RX UART Evento");
+            ESP_LOGW(TAG, "%s", data);
+        }
+        else
+        {
+            ESP_LOGE(TAG, "Error UART RX");
+        }
+    }
+    else
+    {
+        ESP_LOGE(TAG, "Error UART TX");
+    }
 }
 
 // ===================  APP MAIN  ===================
@@ -100,19 +123,31 @@ void app_main(void)
     // --- Inicializar DS18B20 ---
     gpio_set_direction(DS18B20_GPIO, GPIO_MODE_INPUT_OUTPUT);
 
-    // --- Inicializar UART para LoRaWAN ---
-    lorawan_uart_init();
+// --- Inicializar UART para LoRaWAN ---
+lorawan_uart_init();
+lorawan_uart_cmd("AT\r\n");
+vTaskDelay(pdMS_TO_TICKS(800));
+// --- Configurar LoRaWAN Node por UART usando comandos AT ---
+lorawan_uart_cmd("AT+LORAMODE=LORA\r\n");
+vTaskDelay(pdMS_TO_TICKS(800));
+lorawan_uart_cmd("AT+LORAADDR=1");
+vTaskDelay(pdMS_TO_TICKS(800));
+lorawan_uart_cmd("AT+DEVADDR=1\r\n"); // Nodo transmisor
+vTaskDelay(pdMS_TO_TICKS(800));
+lorawan_uart_cmd("AT+FREQS=914900000\r\n"); // US915 canal
+vTaskDelay(pdMS_TO_TICKS(800));
+lorawan_uart_cmd("AT+EIRP=22\r\n");
+vTaskDelay(pdMS_TO_TICKS(800));
+lorawan_uart_cmd("AT+BW=125000\r\n");
+vTaskDelay(pdMS_TO_TICKS(800));
+lorawan_uart_cmd("AT+SF=12\r\n");
+vTaskDelay(pdMS_TO_TICKS(800));
 
-    // --- Configurar LoRaWAN Node por UART ---
-    lorawan_uart_cmd("BEGIN\n");
-    lorawan_uart_cmd("SETFREQ:914900000\n");
-    lorawan_uart_cmd("SETEIRP:22\n");
-    lorawan_uart_cmd("SETBW:125000\n");
-    lorawan_uart_cmd("SETSF:12\n");
-    lorawan_uart_cmd("START\n");
+lorawan_uart_cmd("AT+MODE=TEST\r\n"); // Modo TEST/TRANSPARENT
+// lorawan_uart_cmd("AT+DESTINATION=2\r\n");       // Si tu módulo lo requiere
+vTaskDelay(pdMS_TO_TICKS(1000)); // Espera tras configurar
 
-    printf("Transmisor LoRaWAN listo en UART. Enviando datos al nodo 2 cada 5s...\n");
-
+printf("Transmisor LoRaWAN listo en UART. Enviando datos al nodo 2 cada 5s...\n");
     while (1)
     {
         // Leer sensores
@@ -129,20 +164,20 @@ void app_main(void)
         char mensaje[128];
         snprintf(mensaje, sizeof(mensaje), "T:%.2fC,EC:%.2f,pH:%.2f,TDS:%.2f", temperatura, valor_ec, valor_ph, valor_tds);
 
-        // Incluye el destino (2) en el comando SEND
-        char comando[140];
-        snprintf(comando, sizeof(comando), "SEND:2,%s\n", mensaje);
+        // Envía al nodo 2 con el comando AT+SEND
+        char comando[160];
+        snprintf(comando, sizeof(comando), "AT+SEND=,%s\r\n", mensaje);
 
-        printf("Enviando por LoRaWAN (UART):\n %s", comando);
+        printf("Enviando por LoRaWAN (UART):\n\r %s", comando);
         lorawan_uart_cmd(comando);
 
+        // Lee respuesta del Node 
         uint8_t response[64];
-int rx_len = uart_read_bytes(LORA_UART_NUM, response, sizeof(response)-1, pdMS_TO_TICKS(200));
-if(rx_len > 0) {
-    response[rx_len] = 0;
-    printf("Respuesta Node: %s\n", response);
-}
-
+        int rx_len = uart_read_bytes(LORA_UART_NUM, response, sizeof(response)-1, pdMS_TO_TICKS(200));
+        if(rx_len > 0) {
+            response[rx_len] = 0;
+            printf("Respuesta Node: %s\n\r", response);
+        }
 
         // Imprimir local
         printf("Voltaje EC: %.2f mV | Voltaje pH: %.2f mV | Voltaje TDS: %.2f mV\n", voltaje_ec, voltaje_ph, voltaje_tds);
@@ -157,7 +192,6 @@ if(rx_len > 0) {
     adc_cali_delete_scheme_curve_fitting(cali_ph);
     adc_cali_delete_scheme_curve_fitting(cali_tds);
 }
-
 // ------------- ADC Y SENSORES --------------
 static float leer_adc_mV(adc_oneshot_unit_handle_t handle, adc_cali_handle_t cali, adc_channel_t canal)
 {
