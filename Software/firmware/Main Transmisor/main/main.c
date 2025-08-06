@@ -176,38 +176,36 @@ void app_main(void)
         float valor_ph = calcular_ph(voltaje_ph, temperatura);
         float valor_tds = calcular_tds(voltaje_tds, temperatura);
 
-        char mensaje[50];
+        char mensaje[60];
         char temp_msj[3];
         char data[50];
 
         mensaje[0] = '\0';
-        temp_msj[0] = '\0';
         data[0] = '\0';
-        
-        sprintf(temp_msj, "%02X", DEST_ADDR);
-        strcat(mensaje, temp_msj);
-        sprintf(temp_msj, "%02X", SRC_ADRR);
-        strcat(mensaje, temp_msj);
 
         snprintf(data, sizeof(data), "T:%.2fC,EC:%.2f,pH:%.2f,TDS:%.2f", temperatura, valor_ec, valor_ph, valor_tds);
-        strcat(mensaje, data);
-        
+
+        for (int i = 0; i < strlen(data); i++)
+        {
+            sprintf(temp_msj, "%02X", data[i]);
+            strcat(mensaje, temp_msj);
+        }
+
         ESP_LOGI(TAG, "%s", mensaje);
 
         // Envía al nodo 2 con el comando AT+SEND
         char comando[100];
-        sprintf(mensaje, "020168656C6C6F");
         snprintf(comando, sizeof(comando), "AT+SEND=%s\r\n", mensaje);
 
-        printf("Enviando por LoRaWAN (UART):\n\r %s", comando);
+        printf("Enviando por LoRa (UART):\n\r %s", comando);
         lorawan_uart_cmd(comando);
 
         // Lee respuesta del Node
-        uint8_t response[64];
+        char response[64];
         int rx_len = uart_read_bytes(LORA_UART_NUM, response, sizeof(response) - 1, pdMS_TO_TICKS(200));
         if (rx_len > 0)
         {
-            response[rx_len] = 0;
+            response[rx_len] = '\0';
             printf("Respuesta Node: %s\n\r", response);
         }
 
