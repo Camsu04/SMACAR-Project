@@ -1,7 +1,8 @@
 
-# SMACAR-Project
+# SMACAR-Project 
+![LOGO](Documentacion/logo.png)
 
-**Sistema IoT solar + LoRa para monitoreo de agua en zonas rurales**
+**SMACAR: SISTEMA DE MONITOREO Y ALERTA DE CALIDAD DEL AGUA RURAL**
 
 Monitorea pH, turbidez, TDS y transmite los datos mediante LoRa. ¡Incluye app móvil, hardware impreso en 3D y visualización de datos!
 
