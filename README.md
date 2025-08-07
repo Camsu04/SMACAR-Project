@@ -4,7 +4,7 @@
 
 **SMACAR: SISTEMA DE MONITOREO Y ALERTA DE CALIDAD DEL AGUA RURAL**
 
-Monitorea pH, turbidez, TDS y transmite los datos mediante LoRa. ¡Incluye app móvil, hardware impreso en 3D y visualización de datos!
+Plataforma distribuida de monitoreo de calidad de agua diseñada para entornos rurales: cada nodo utiliza un ESP32 —programado íntegramente en C— que adquiere parámetros críticos (pH, turbidez, conductividad y temperatura) mediante sensores industriales. La comunicación se realiza vía LoRaWAN, asegurando transmisión de datos robusta, segura y de largo alcance hacia una interfaz web/móvil de acceso remoto. El sistema opera con energía renovable, priorizando autonomía y bajo mantenimiento. El diseño prioriza robustez, escalabilidad y validación científica, permitiendo despliegue inmediato, integración con infraestructuras existentes y generación automatizada de alertas para respuesta temprana ante riesgos sanitarios.
 
 ---
 
