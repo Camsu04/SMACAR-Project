@@ -20,12 +20,13 @@ Monitorea pH, turbidez, TDS y transmite los datos mediante LoRa. ¡Incluye app m
 
 ### Prototipo físico armado
 
-![Prototipo físico](Documentacion/PROYECTO FINAL.jpg)
+Coming soon...
+// ![Prototipo físico](Documentacion/PROYECTO FINAL.jpg)
 
 ---
 
 ### Carcasa 3D y electrónica
-
+Coming soon...
 | Carcasa ensamblada                       | Electrónica interna                        |
 |-------------------------------------------|--------------------------------------------|
 | ![Carcasa 3D](Documentacion/CARCASA.jpg) | ![PCB y conexiones](Documentacion/ELECTRONICA.jpg) |
