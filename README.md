@@ -27,9 +27,9 @@ Coming soon...
 
 ### Carcasa 3D y electrónica
 Coming soon...
-| Carcasa ensamblada                       | Electrónica interna                        |
+| Carcasa ensamblada                       | Electrónica                                 |
 |-------------------------------------------|--------------------------------------------|
-| ![Carcasa 3D](Documentacion/CARCASA.jpg) | ![PCB y conexiones](Documentacion/ELECTRONICA.jpg) |
+| ![Carcasa 3D](Documentacion/CARCASA.jpg) | ![PCB y conexiones](Hardware/Electronic/SMACAR%20RECEIVER%20BOARD/RENDER.png) |
 
 ---
 
