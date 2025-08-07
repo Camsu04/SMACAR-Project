@@ -176,14 +176,14 @@ void app_main(void)
         float valor_ph = calcular_ph(voltaje_ph, temperatura);
         float valor_tds = calcular_tds(voltaje_tds, temperatura);
 
-        char mensaje[60];
+        char mensaje[90];
         char temp_msj[3];
-        char data[50];
+        char data[55];
 
         mensaje[0] = '\0';
         data[0] = '\0';
 
-        snprintf(data, sizeof(data), "T:%.2fC,EC:%.2f,pH:%.2f,TDS:%.2f", temperatura, valor_ec, valor_ph, valor_tds);
+        snprintf(data, sizeof(data), "T:TEMP:%.2fC,EC:%.2f,pH:%.2f,TDS:%04.2f", temperatura, valor_ec, valor_ph, valor_tds);
 
         for (int i = 0; i < strlen(data); i++)
         {
@@ -194,7 +194,7 @@ void app_main(void)
         ESP_LOGI(TAG, "%s", mensaje);
 
         // Envía al nodo 2 con el comando AT+SEND
-        char comando[100];
+        char comando[120];
         snprintf(comando, sizeof(comando), "AT+SEND=%s\r\n", mensaje);
 
         printf("Enviando por LoRa (UART):\n\r %s", comando);
