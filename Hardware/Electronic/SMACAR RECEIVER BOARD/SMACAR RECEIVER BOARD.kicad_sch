@@ -880,312 +880,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_4ms_Resistor:470R_0805_350mW"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "470R_0805_350mW"
-				(at -3.175 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-				(at -2.54 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "470R, >=350mW, 5%"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Specifications" "470R, >=350mW, 5%"
-				(at -2.54 -7.874 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "Panasonic"
-				(at -2.54 -9.398 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Part Number" "ERJ-P06J471V"
-				(at -2.54 -10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Display" "470R/350mW"
-				(at 3.81 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "470R_0805_350mW"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_* R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "470R_0805_350mW_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "470R_0805_350mW_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "SparkFun-Connector:Conn_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "SparkFun-Connector:1x02"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Basic 0.1\" PTH"
-				(at 0 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "SparkFun connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "SparkFun-Connectors:M04POLAR"
 			(pin_numbers
 				(hide yes)
@@ -1431,131 +1125,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+5V"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+5V"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+5V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+5V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1659,18 +1228,6 @@
 		)
 	)
 	(rectangle
-		(start 66.04 13.97)
-		(end 97.79 36.83)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 9188add2-9aad-4478-b263-ed56d952ac99)
-	)
-	(rectangle
 		(start 99.06 13.97)
 		(end 196.85 127)
 		(stroke
@@ -1714,145 +1271,11 @@
 		)
 		(uuid "26543bef-748c-44e1-bcaa-8385e13447d3")
 	)
-	(text "ALIMENTACION\n"
-		(exclude_from_sim no)
-		(at 82.55 39.624 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "46db7e41-db07-4c7f-98df-d7d8f5f8f79e")
-	)
-	(junction
-		(at 142.24 20.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4494c9ee-f2d3-4d45-954f-0aca2054eef6")
-	)
-	(junction
-		(at 173.99 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d49b140e-0907-4788-a121-48488ff03bc9")
-	)
 	(junction
 		(at 143.51 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1f34d40-c37e-4d3d-bacf-bf072980d577")
-	)
-	(junction
-		(at 186.69 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f2ac3f6d-e182-462a-a592-9cfda8b2a50e")
-	)
-	(junction
-		(at 171.45 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fdb5ffd7-4181-4ec1-9877-c30edac0a2e2")
-	)
-	(wire
-		(pts
-			(xy 171.45 73.66) (xy 171.45 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07572fc8-2009-4d12-8ebe-fb40d702dc19")
-	)
-	(wire
-		(pts
-			(xy 142.24 22.86) (xy 142.24 20.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e8d2435-a192-4376-955c-2ed9b6c796f9")
-	)
-	(wire
-		(pts
-			(xy 81.28 27.94) (xy 86.36 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "18d48736-9f87-4c93-8d68-033235a2ec35")
-	)
-	(wire
-		(pts
-			(xy 186.69 81.28) (xy 182.88 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44ec790d-eaa4-403a-a6e8-e669cd8c1690")
-	)
-	(wire
-		(pts
-			(xy 173.99 68.58) (xy 175.26 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45ef8c48-cede-4e1a-bff3-a1d6f7c9b677")
-	)
-	(wire
-		(pts
-			(xy 171.45 66.04) (xy 175.26 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4746e581-aba9-4048-b602-3e2196518da9")
-	)
-	(wire
-		(pts
-			(xy 144.78 20.32) (xy 186.69 20.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4c8018e2-165e-4f6c-bec7-cc6b62021909")
-	)
-	(wire
-		(pts
-			(xy 186.69 20.32) (xy 186.69 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5014af6b-7825-4882-9a8f-81fc8df12315")
-	)
-	(wire
-		(pts
-			(xy 138.43 20.32) (xy 142.24 20.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "51d812c8-1054-4eb4-871b-bd9f25b95726")
-	)
-	(wire
-		(pts
-			(xy 142.24 17.78) (xy 144.78 17.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "602d3a7e-ce16-47b8-9979-0f3a2417e938")
 	)
 	(wire
 		(pts
@@ -1866,6 +1289,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 38.1) (xy 118.11 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63300efc-e3c7-456d-85d5-5b7c18140c45")
+	)
+	(wire
+		(pts
 			(xy 140.97 120.65) (xy 143.51 120.65)
 		)
 		(stroke
@@ -1873,16 +1306,6 @@
 			(type default)
 		)
 		(uuid "68a562d7-dd94-415d-beab-057982a89d21")
-	)
-	(wire
-		(pts
-			(xy 175.26 73.66) (xy 171.45 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "69779a3b-0b12-4eba-883c-0cafa2a3e3a6")
 	)
 	(wire
 		(pts
@@ -1896,43 +1319,33 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 73.66) (xy 186.69 73.66)
+			(xy 168.91 83.82) (xy 172.72 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "79e0333e-d639-4a58-a51e-03a0e50bdc63")
+		(uuid "7bc22a24-b6e0-4143-adb1-e475edc4349f")
 	)
 	(wire
 		(pts
-			(xy 168.91 66.04) (xy 171.45 66.04)
+			(xy 144.78 22.86) (xy 144.78 20.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7af0b26d-c21f-429d-af33-0a55a7acaa43")
+		(uuid "8f80fd12-ab4e-450b-aa1b-09685f1e3661")
 	)
 	(wire
 		(pts
-			(xy 81.28 25.4) (xy 86.36 25.4)
+			(xy 144.78 20.32) (xy 148.59 20.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "81728427-2ffb-4aab-9ccb-ba03ec45f37d")
-	)
-	(wire
-		(pts
-			(xy 168.91 68.58) (xy 173.99 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8cd264e0-b37b-470a-a32b-d8584437f0f8")
+		(uuid "8f845340-8e61-494b-a78c-1f476b423fa6")
 	)
 	(wire
 		(pts
@@ -1956,26 +1369,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 68.58) (xy 173.99 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1aceb62-8fbb-4020-b8f4-4acc6efb7c66")
-	)
-	(wire
-		(pts
-			(xy 175.26 81.28) (xy 173.99 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6d8e557-ec3f-4d60-b3b2-2e274b138719")
-	)
-	(wire
-		(pts
 			(xy 143.51 114.3) (xy 143.51 120.65)
 		)
 		(stroke
@@ -1983,36 +1376,6 @@
 			(type default)
 		)
 		(uuid "dc9ede98-6653-4cd9-93e4-2296f5c5d7bd")
-	)
-	(wire
-		(pts
-			(xy 144.78 22.86) (xy 144.78 20.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e40b8c7e-dee1-4716-b64a-49107f49d4e0")
-	)
-	(wire
-		(pts
-			(xy 186.69 73.66) (xy 186.69 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e755fc90-d331-4b60-9af0-6deb86c2f6fb")
-	)
-	(wire
-		(pts
-			(xy 142.24 20.32) (xy 142.24 17.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9ea8534-0db0-430e-aa01-15c7b2b6626e")
 	)
 	(wire
 		(pts
@@ -2024,9 +1387,9 @@
 		)
 		(uuid "f1c375c5-cf6d-4515-9186-c9f6f8c2e7bd")
 	)
-	(global_label "5V"
+	(global_label "3.3V"
 		(shape input)
-		(at 86.36 25.4 0)
+		(at 148.59 20.32 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2034,9 +1397,9 @@
 			)
 			(justify left)
 		)
-		(uuid "05767af9-4b8b-4585-8285-ccd4b64c5aeb")
+		(uuid "379cfa3a-bbb8-40e1-bf00-d65c14ee6f3c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 91.6433 25.4 0)
+			(at 155.6876 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2046,7 +1409,7 @@
 			)
 		)
 	)
-	(global_label "SCL"
+	(global_label "RX"
 		(shape input)
 		(at 217.17 25.4 0)
 		(fields_autoplaced yes)
@@ -2058,7 +1421,7 @@
 		)
 		(uuid "39696503-b85c-49d0-9613-577c29535b28")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 223.6628 25.4 0)
+			(at 222.6347 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2068,9 +1431,9 @@
 			)
 		)
 	)
-	(global_label "SDA"
+	(global_label "TX"
 		(shape input)
-		(at 175.26 66.04 0)
+		(at 172.72 83.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2078,9 +1441,9 @@
 			)
 			(justify left)
 		)
-		(uuid "526cdd57-577f-419a-b2a7-109d96334be4")
+		(uuid "39da9580-35d2-436f-a143-87583b073bde")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.8133 66.04 0)
+			(at 177.8823 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2090,7 +1453,7 @@
 			)
 		)
 	)
-	(global_label "5V"
+	(global_label "3.3V"
 		(shape input)
 		(at 217.17 30.48 0)
 		(fields_autoplaced yes)
@@ -2102,29 +1465,7 @@
 		)
 		(uuid "8d1cefac-f9d1-4f0c-a40a-0f907c65ae64")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 222.4533 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "5V"
-		(shape input)
-		(at 144.78 17.78 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a4923c31-ce5f-4b02-a794-986497909501")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 150.0633 17.78 0)
+			(at 224.2676 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2158,28 +1499,6 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 86.36 27.94 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c2a815d2-26e3-49cd-b704-14bddf54ca44")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 93.2157 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
 		(at 153.67 120.65 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2200,7 +1519,7 @@
 			)
 		)
 	)
-	(global_label "SDA"
+	(global_label "TX"
 		(shape input)
 		(at 217.17 22.86 0)
 		(fields_autoplaced yes)
@@ -2212,7 +1531,7 @@
 		)
 		(uuid "dada4f9d-5d0a-419d-b8af-c43a32fba01f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 223.7233 22.86 0)
+			(at 222.3323 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2222,24 +1541,24 @@
 			)
 		)
 	)
-	(global_label "SCL"
+	(global_label "RX"
 		(shape input)
-		(at 175.26 68.58 0)
+		(at 114.3 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "e8730f9d-4f77-4dbd-a6bf-23f91467e574")
+		(uuid "e3e4ab65-23ac-4ed0-a307-e20fc492816d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.7528 68.58 0)
+			(at 108.8353 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -2514,287 +1833,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_4ms_Resistor:470R_0805_350mW")
-		(at 179.07 73.66 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "48deb94c-e5f7-480d-9b67-a026c31c6ab3")
-		(property "Reference" "R3"
-			(at 178.816 78.232 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "470R_0805_350mW"
-			(at 179.07 76.835 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 191.77 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 179.07 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "470R, >=350mW, 5%"
-			(at 179.07 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Specifications" "470R, >=350mW, 5%"
-			(at 186.944 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Panasonic"
-			(at 188.468 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ERJ-P06J471V"
-			(at 189.992 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Display" "470R/350mW"
-			(at 178.816 76.454 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "f7e33ace-d12a-4f36-b5a4-e6557e6c6aff")
-		)
-		(pin "1"
-			(uuid "f8a9d3b0-3fc6-42e0-bf4d-fd7888b5a473")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_4ms_Resistor:470R_0805_350mW")
-		(at 179.07 81.28 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "589a7da3-ae63-4f6b-a0a8-0c9e3a033fd8")
-		(property "Reference" "R4"
-			(at 178.816 85.852 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "470R_0805_350mW"
-			(at 179.07 84.455 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 191.77 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 179.07 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "470R, >=350mW, 5%"
-			(at 179.07 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Specifications" "470R, >=350mW, 5%"
-			(at 186.944 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Panasonic"
-			(at 188.468 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ERJ-P06J471V"
-			(at 189.992 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Display" "470R/350mW"
-			(at 178.816 84.074 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ae8e5c63-8eda-4b2a-b8d5-d5f26362d8f4")
-		)
-		(pin "1"
-			(uuid "cd6fac98-8c71-4315-96fd-3b9b8d5ad191")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 138.43 20.32 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ac5f66d0-689b-4692-aa1e-b08723e0e480")
-		(property "Reference" "#PWR05"
-			(at 142.24 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 134.62 20.3199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 138.43 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 138.43 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 138.43 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8fe22531-31a7-47d2-ae73-a6c926af18ba")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 140.97 120.65 270)
 		(unit 1)
@@ -2856,74 +1894,6 @@
 			(project "SMACAR RECEIVER BOARD"
 				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
 					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SparkFun-Connector:Conn_01x02")
-		(at 76.2 27.94 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fd675a49-0b41-4d3c-bb06-2ea7a2e6ed71")
-		(property "Reference" "J2"
-			(at 76.2 19.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02"
-			(at 76.2 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
-			(at 76.2 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 76.2 19.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Basic 0.1\" PTH"
-			(at 76.2 16.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "95e3d1f8-44f5-468b-a2a1-c8f4654b38ad")
-		)
-		(pin "1"
-			(uuid "67d43080-1075-49db-a848-6a32fa294f23")
-		)
-		(instances
-			(project "SMACAR RECEIVER BOARD"
-				(path "/05ad7d58-e0d2-49fc-abf9-9678d4d14c0c"
-					(reference "J2")
 					(unit 1)
 				)
 			)
