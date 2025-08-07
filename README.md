@@ -11,7 +11,8 @@ Monitorea pH, turbidez, TDS y transmite los datos mediante LoRa. ¡Incluye app m
 
 ### Diseño del sistema
 
-![Diagrama general](Hardware/Electronic/SMACAR MAIN BOARD/Diagrama.png)
+![Diagrama general](Hardware/Electronic/SMACAR%20MAIN%20BOARD/Diagrama.png)
+
 
 ---
 
