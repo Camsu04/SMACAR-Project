@@ -38,9 +38,10 @@ Monitorea pH, turbidez, TDS y transmite los datos mediante LoRa. ¡Incluye app m
 
 ### App móvil
 
-| Pantalla principal                | App en funcionamiento                 |
-|-----------------------------------|---------------------------------------|
-| ![App móvil](Software/mobileapp/APP.jpg)  | ![App funcionando](Software/mobileapp/APPMOBILEENFUNCIONAMIENTO.jpg) |
+| Pantalla principal | App en funcionamiento |
+|--------------------|----------------------|
+| ![App móvil](mobile%20app/APP.jpg) | ![App funcionando](mobile%20app/APP%20MOBILE%20EN%20FUNCIONAMIENTO.jpg) |
+
 
 ---
 
