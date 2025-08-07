@@ -46,6 +46,10 @@ Coming soon...
 |--------------------|----------------------|
 | ![App móvil](Software/mobile%20app/APP_fuera.jpg) | ![App funcionando](Software/mobile%20app/APP_MOBILE_EN_FUNCIONAMIENTO.jpg) |
 
+### DASHBOARD WEB
+
+![Dashboard funcionando](Software/dashboard/DASHBOARD%20BLYNK%202.png)
+
 
 ---
 
