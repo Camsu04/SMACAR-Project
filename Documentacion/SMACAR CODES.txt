@@ -1,0 +1,317 @@
+Gravity Analog Electrical Conductivity Sensor Meter V2 K=1 SKU
+
+sample code:
+
+#include "DFRobot_EC.h"
+#include <EEPROM.h>
+
+#define EC_PIN A1
+float voltage,ecValue,temperature = 25;
+DFRobot_EC ec;
+
+void setup()
+{
+  Serial.begin(115200);  
+  ec.begin();
+}
+
+void loop()
+{
+    static unsigned long timepoint = millis();
+    if(millis()-timepoint>1000U)  //time interval: 1s
+    {
+      timepoint = millis();
+      voltage = analogRead(EC_PIN)/1024.0*5000;   // read the voltage
+      //temperature = readTemperature();          // read your temperature sensor to execute temperature compensation
+      ecValue =  ec.readEC(voltage,temperature);  // convert voltage to EC with temperature compensation
+      Serial.print("temperature:");
+      Serial.print(temperature,1);
+      Serial.print("^C  EC:");
+      Serial.print(ecValue,2);
+      Serial.println("ms/cm");
+    }
+    ec.calibration(voltage,temperature);          // calibration process by Serail CMD
+}
+
+float readTemperature()
+{
+  //add your code here to get the temperature from your temperature sensor
+}
+
+
+Gravity Analog pH Sensor Meter Kit V2 
+
+sample code:
+
+#include "DFRobot_PH.h"
+#include <EEPROM.h>
+
+#define PH_PIN A1
+float voltage,phValue,temperature = 25;
+DFRobot_PH ph;
+
+void setup()
+{
+    Serial.begin(115200);  
+    ph.begin();
+}
+
+void loop()
+{
+    static unsigned long timepoint = millis();
+    if(millis()-timepoint>1000U){                  //time interval: 1s
+        timepoint = millis();
+        //temperature = readTemperature();         // read your temperature sensor to execute temperature compensation
+        voltage = analogRead(PH_PIN)/1024.0*5000;  // read the voltage
+        phValue = ph.readPH(voltage,temperature);  // convert voltage to pH with temperature compensation
+        Serial.print("temperature:");
+        Serial.print(temperature,1);
+        Serial.print("^C  pH:");
+        Serial.println(phValue,2);
+    }
+    ph.calibration(voltage,temperature);           // calibration process by Serail CMD
+}
+
+float readTemperature()
+{
+  //add your code here to get the temperature from your temperature sensor
+}
+
+Gravity: LoRaWAN Node Module 
+
+
+sample code TRANSMISOR:
+
+#include <DFRobot_LWNode.h>
+#include <dht11.h>
+dht11 DHT;
+#define DHT11_PIN 4
+#define FREQ  914900000   
+DFRobot_LWNode_IIC node(1); // Set node address to 1
+
+void setup( void ) {
+    Serial.begin(115200);
+    delay(5000);
+    node.begin(/*communication IIC*/&Wire,/*debug UART*/&Serial);
+    const uint32_t loraConfig[] = {FREQ, DBM22, 125000, 12}; // Configure LoRa communication parameters
+    while(!node.setFreq(loraConfig[0])  || 
+          !node.setEIRP(loraConfig[1])  || 
+          !node.setBW(loraConfig[2])    || 
+          !node.setSF(loraConfig[3])    || 
+          !node.start()) {
+        Serial.println("LoRa init failed");
+        delay(2000);
+    }
+}
+
+void loop( void ){
+    DHT.read(DHT11_PIN);   // Get data from DHT11 temperature and humidity sensor
+    Serial.print(DHT.humidity,1);
+    Serial.print(",\t");
+    Serial.println(DHT.temperature,1);
+    String DHT11_DATE=String(DHT.humidity)+"%"+"  "+String(DHT.temperature) + "℃";
+    delay(2000);
+    node.sendPacket(2, DHT11_DATE);  // Send temperature and humidity data to node with address 2
+    node.sleep(5000);
+}
+
+SAMPLE CODE RECEPTOR:
+#include <DFRobot_LWNode.h>
+#define FREQ  914900000   
+DFRobot_LWNode_IIC node(2);  // Set node address to 2
+
+void rxCBFunc(uint8_t from, void *buffer, uint16_t size, int8_t rssi, int8_t snr){
+    char *p = (char *)buffer;
+    Serial.print("recv from: ");
+    Serial.println(from, HEX);
+    Serial.print("recv data: ");
+    for(uint8_t i = 0; i < size; i++){
+        Serial.print(p[i]);
+    }
+    Serial.println();
+    Serial.println("Text:");
+    Serial.println((char *)buffer);
+    Serial.print("rssi=");Serial.println(rssi);
+    Serial.print("snr=");Serial.println(snr);
+}
+
+void setup( void ){
+    Serial.begin(115200);
+    delay(5000);
+    node.begin(/*communication IIC*/&Wire,/*debug UART*/&Serial);
+    const uint32_t config[] = {FREQ, DBM22, 125000, 12};   // Configure LoRa communication parameters
+    while(!node.setFreq(config[0])    || 
+          !node.setEIRP(config[1])   || 
+          !node.setBW(config[2])     || 
+          !node.setSF(config[3])     || 
+          !node.start()) {
+        Serial.println("LoRa init failed, retrying...");
+        delay(2000);
+    }
+    node.setRxCB(rxCBFunc);
+}
+
+void loop( void ){
+    node.sleep(5000);
+}
+
+
+Analog TDS Sensor Meter for Arduino / ESP32
+
+sample code:
+
+/***************************************************
+ DFRobot Gravity: Analog TDS Sensor / Meter For Arduino
+ <https://www.dfrobot.com/wiki/index.php/Gravity:_Analog_TDS_Sensor_/_Meter_For_Arduino_SKU:_SEN0244>
+ 
+ Created 2017-8-22
+ By Jason <jason.ling@dfrobot.com@dfrobot.com>
+ 
+ GNU Lesser General Public License.
+ See <http://www.gnu.org/licenses/> for details.
+ All above must be included in any redistribution
+ 
+ /***********Notice and Trouble shooting***************
+ 1. This code is tested on Arduino Uno and Leonardo with Arduino IDE 1.0.5 r2 and 1.8.2.
+ 2. More details, please click this link: <https://www.dfrobot.com/wiki/index.php/Gravity:_Analog_TDS_Sensor_/_Meter_For_Arduino_SKU:_SEN0244>
+ ****************************************************/
+
+#define TdsSensorPin A1
+#define VREF 5.0      // analog reference voltage(Volt) of the ADC
+#define SCOUNT  30           // sum of sample point
+int analogBuffer[SCOUNT];    // store the analog value in the array, read from ADC
+int analogBufferTemp[SCOUNT];
+int analogBufferIndex = 0,copyIndex = 0;
+float averageVoltage = 0,tdsValue = 0,temperature = 25;
+
+void setup()
+{
+    Serial.begin(115200);
+    pinMode(TdsSensorPin,INPUT);
+}
+
+void loop()
+{
+   static unsigned long analogSampleTimepoint = millis();
+   if(millis()-analogSampleTimepoint > 40U)     //every 40 milliseconds,read the analog value from the ADC
+   {
+     analogSampleTimepoint = millis();
+     analogBuffer[analogBufferIndex] = analogRead(TdsSensorPin);    //read the analog value and store into the buffer
+     analogBufferIndex++;
+     if(analogBufferIndex == SCOUNT) 
+         analogBufferIndex = 0;
+   }   
+   static unsigned long printTimepoint = millis();
+   if(millis()-printTimepoint > 800U)
+   {
+      printTimepoint = millis();
+      for(copyIndex=0;copyIndex<SCOUNT;copyIndex++)
+        analogBufferTemp[copyIndex]= analogBuffer[copyIndex];
+      averageVoltage = getMedianNum(analogBufferTemp,SCOUNT) * (float)VREF / 1024.0; // read the analog value more stable by the median filtering algorithm, and convert to voltage value
+      float compensationCoefficient=1.0+0.02*(temperature-25.0);    //temperature compensation formula: fFinalResult(25^C) = fFinalResult(current)/(1.0+0.02*(fTP-25.0));
+      float compensationVolatge=averageVoltage/compensationCoefficient;  //temperature compensation
+      tdsValue=(133.42*compensationVolatge*compensationVolatge*compensationVolatge - 255.86*compensationVolatge*compensationVolatge + 857.39*compensationVolatge)*0.5; //convert voltage value to tds value
+      //Serial.print("voltage:");
+      //Serial.print(averageVoltage,2);
+      //Serial.print("V   ");
+      Serial.print("TDS Value:");
+      Serial.print(tdsValue,0);
+      Serial.println("ppm");
+   }
+}
+int getMedianNum(int bArray[], int iFilterLen) 
+{
+      int bTab[iFilterLen];
+      for (byte i = 0; i<iFilterLen; i++)
+	  bTab[i] = bArray[i];
+      int i, j, bTemp;
+      for (j = 0; j < iFilterLen - 1; j++) 
+      {
+	  for (i = 0; i < iFilterLen - j - 1; i++) 
+          {
+	    if (bTab[i] > bTab[i + 1]) 
+            {
+		bTemp = bTab[i];
+	        bTab[i] = bTab[i + 1];
+		bTab[i + 1] = bTemp;
+	     }
+	  }
+      }
+      if ((iFilterLen & 1) > 0)
+	bTemp = bTab[(iFilterLen - 1) / 2];
+      else
+	bTemp = (bTab[iFilterLen / 2] + bTab[iFilterLen / 2 - 1]) / 2;
+      return bTemp;
+}
+
+Waterproof DS18B20 Digital Temperature Sensor 
+
+SAMPLE CODE:
+
+#include <OneWire.h>
+
+int DS18S20_Pin = 2; //DS18S20 Signal pin on digital 2
+
+//Temperature chip i/o
+OneWire ds(DS18S20_Pin);  // on digital pin 2
+
+void setup(void) {
+  Serial.begin(9600);
+}
+
+void loop(void) {
+  float temperature = getTemp();
+  Serial.println(temperature);
+
+  delay(100); //just here to slow down the output so it is easier to read
+
+}
+
+
+float getTemp(){
+  //returns the temperature from one DS18S20 in DEG Celsius
+
+  byte data[12];
+  byte addr[8];
+
+  if ( !ds.search(addr)) {
+      //no more sensors on chain, reset search
+      ds.reset_search();
+      return -1000;
+  }
+
+  if ( OneWire::crc8( addr, 7) != addr[7]) {
+      Serial.println("CRC is not valid!");
+      return -1000;
+  }
+
+  if ( addr[0] != 0x10 && addr[0] != 0x28) {
+      Serial.print("Device is not recognized");
+      return -1000;
+  }
+
+  ds.reset();
+  ds.select(addr);
+  ds.write(0x44,1); // start conversion, with parasite power on at the end
+
+  byte present = ds.reset();
+  ds.select(addr);
+  ds.write(0xBE); // Read Scratchpad
+
+
+  for (int i = 0; i < 9; i++) { // we need 9 bytes
+    data[i] = ds.read();
+  }
+
+  ds.reset_search();
+
+  byte MSB = data[1];
+  byte LSB = data[0];
+
+  float tempRead = ((MSB << 8) | LSB); //using two's compliment
+  float TemperatureSum = tempRead / 16;
+
+  return TemperatureSum;
+
+}
+
