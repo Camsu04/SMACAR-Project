@@ -32,7 +32,7 @@ Monitorea pH, turbidez, TDS y transmite los datos mediante LoRa. ¡Incluye app m
 
 ### Diseño 3D animado
 
-![Animación carcasa 3D](Documentacion/Animacion_Carcasa.gif)
+![Animación carcasa 3D](Hardware/3DDesign/CarcasaLoRaWAN/ensamblegif.gif)
 
 ---
 
