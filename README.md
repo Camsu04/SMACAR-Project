@@ -58,12 +58,12 @@ Coming soon...
 ```
 SMACAR-Project/
 ├── Documentacion/           # Diagramas, fotos y GIFs de diseño
-│   ├── Animacion_Carcasa.gif
+│   ├── Layout.png
 │   ├── CARCASA.jpg
-│   ├── DIAGRAMA.png
-│   ├── ELECTRONICA.jpg
+│   ├── DIAGRAMA.pdf
+│   ├── DATASHEET.pdf
 │   ├── PROYECTO FINAL.jpg
-├── Hardware/                # Archivos y esquemas electrónicos
+├── Hardware/                # Archivos y esquemas electrónicos + Diseños 3d en solidworks
 ├── Software firmware/       # Código fuente para ESP32 y LoRa
 ├── mobile app/              # Capturas de la app móvil
 │   ├── APP.jpg
