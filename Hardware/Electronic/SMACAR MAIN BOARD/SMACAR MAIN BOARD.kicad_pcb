@@ -135,7 +135,7 @@
 				)
 			)
 		)
-		(property "Value" "M04PTH"
+		(property "Value" "LORAWAN"
 			(at 3.81 4.08 90)
 			(layer "F.SilkS")
 			(uuid "e782b7bb-c977-44a7-9e6a-de008e432c52")
@@ -1714,7 +1714,7 @@
 				)
 			)
 		)
-		(property "Value" "M03PTH"
+		(property "Value" "PH"
 			(at 3.39 4.2 90)
 			(layer "F.SilkS")
 			(uuid "bdfd097c-4747-4a4d-8214-d9b4f6828b2c")
@@ -4090,8 +4090,8 @@
 				)
 			)
 		)
-		(property "Value" "ELECTRICAL CONDUCTIVITY SENSOR"
-			(at 9.04 4.25 90)
+		(property "Value" "EC"
+			(at 2.79 4.25 90)
 			(layer "F.SilkS")
 			(uuid "51933863-008a-4035-a2fb-98db72532bf2")
 			(effects
@@ -4525,7 +4525,7 @@
 				)
 			)
 		)
-		(property "Value" "M03PTH"
+		(property "Value" "TDS"
 			(at 2.54 4.08 90)
 			(layer "F.SilkS")
 			(uuid "37517ce9-dd09-4c23-92db-ec43a0fc3fba")
@@ -4942,6 +4942,17 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(gr_rect
+		(start 101.5 30.5)
+		(end 162 101.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "ea1f9094-0b3c-4dcb-9baf-03b9ea60161d")
 	)
 	(gr_text "MAIN BOARD SMACAR"
 		(at 122.5 98.25 0)
