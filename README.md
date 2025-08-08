@@ -12,7 +12,7 @@ Plataforma distribuida de monitoreo de calidad de agua diseñada para entornos r
 
 ### Diseño del sistema
 
-![Diagrama general](Hardware/Electronic/SMACAR%20MAIN%20BOARD/Diagrama.png)
+![Diagrama general](Hardware/Electronic/SMACAR%20MAIN%20BOARD/Diagrama1.png)
 ![Diagrama general](Hardware/Electronic/SMACAR%20RECEIVER%20BOARD/Diagrama.png)
 
 
