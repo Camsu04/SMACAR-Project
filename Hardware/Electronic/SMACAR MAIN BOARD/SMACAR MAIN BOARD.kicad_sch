@@ -885,6 +885,126 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "PCM_SL_Capacitors:100nF_Ceramic"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "100nF_Ceramic"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "100nF Ceramic Capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Ceramic Capacitor 104 100nF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "100nF_Ceramic_0_1"
+				(rectangle
+					(start -0.762 2.286)
+					(end -0.508 -2.286)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.508 2.286)
+					(end 0.762 -2.286)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "100nF_Ceramic_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2)
+					(name "~"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 2.54 0 180)
+					(length 2)
+					(name "~"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "SparkFun-Connector:Conn_01x02"
 			(pin_names
 				(offset 1.016)
@@ -2021,10 +2141,34 @@
 		(uuid "36937388-4b71-49a8-8487-ec45f2678767")
 	)
 	(junction
+		(at 176.53 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3be680c2-1238-40b0-b073-c50e3cf4f5f4")
+	)
+	(junction
+		(at 208.28 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ced04d0-d661-409c-ba37-e5e35e35c801")
+	)
+	(junction
+		(at 173.99 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "448ef5e9-84c4-4dd9-be8b-f461d2d851c1")
+	)
+	(junction
 		(at 175.26 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "49939597-7ff1-4b5a-a013-96647996d62f")
+	)
+	(junction
+		(at 175.26 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5e68c1f3-79d2-4172-81d8-b9f87203a1cb")
 	)
 	(junction
 		(at 147.32 115.57)
@@ -2032,9 +2176,31 @@
 		(color 0 0 0 0)
 		(uuid "877babd0-3773-4cf0-8d5c-b0c08765b1c8")
 	)
+	(junction
+		(at 154.94 17.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8c68b891-d666-4fea-ade2-cf09004a8084")
+	)
+	(junction
+		(at 208.28 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a068611c-4e9d-48cf-b747-7a7ed150ecbe")
+	)
 	(no_connect
 		(at 129.54 96.52)
 		(uuid "b88cc268-748d-48ee-9add-355148030255")
+	)
+	(wire
+		(pts
+			(xy 196.85 74.93) (xy 176.53 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0230ec81-bad9-44c8-9bb0-98ea247d0406")
 	)
 	(wire
 		(pts
@@ -2068,6 +2234,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 57.15) (xy 177.8 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "179f59f3-f64b-4983-a0c7-95ccad3daa08")
+	)
+	(wire
+		(pts
 			(xy 237.49 48.26) (xy 242.57 48.26)
 		)
 		(stroke
@@ -2088,6 +2264,36 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 19.05) (xy 154.94 17.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23d9f076-8b35-46f2-a55a-85d80d778e69")
+	)
+	(wire
+		(pts
+			(xy 208.28 69.85) (xy 208.28 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25febc2f-c680-4733-8928-da889c9dd5b7")
+	)
+	(wire
+		(pts
+			(xy 160.02 19.05) (xy 154.94 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26ed5313-d2e1-47a5-ba68-52c530757bc8")
+	)
+	(wire
+		(pts
 			(xy 144.78 115.57) (xy 147.32 115.57)
 		)
 		(stroke
@@ -2095,6 +2301,26 @@
 			(type default)
 		)
 		(uuid "27e16cee-6dec-4844-b295-9f43fc2d7697")
+	)
+	(wire
+		(pts
+			(xy 208.28 74.93) (xy 208.28 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27e80c14-f5c8-4a3b-834d-482b0e321354")
+	)
+	(wire
+		(pts
+			(xy 201.93 63.5) (xy 208.28 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29e114e6-32ae-46c5-b792-e382b55d20c9")
 	)
 	(wire
 		(pts
@@ -2128,6 +2354,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 63.5) (xy 175.26 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32166dd6-0f1a-43a6-910d-138c1d7f0c71")
+	)
+	(wire
+		(pts
 			(xy 237.49 45.72) (xy 242.57 45.72)
 		)
 		(stroke
@@ -2135,6 +2371,16 @@
 			(type default)
 		)
 		(uuid "33d4e2b1-bff1-4a3b-b1fd-e888b3bd0c75")
+	)
+	(wire
+		(pts
+			(xy 173.99 69.85) (xy 173.99 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34eb62ef-63e8-4f4a-97e4-3eacc4f75b69")
 	)
 	(wire
 		(pts
@@ -2158,6 +2404,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 63.5) (xy 175.26 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "463d0336-532d-4132-bea5-d9a8363110f0")
+	)
+	(wire
+		(pts
 			(xy 147.32 110.49) (xy 147.32 115.57)
 		)
 		(stroke
@@ -2165,6 +2421,16 @@
 			(type default)
 		)
 		(uuid "47b3bb6e-ab6a-4a2e-984b-25be66520bbd")
+	)
+	(wire
+		(pts
+			(xy 176.53 74.93) (xy 176.53 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "483fff93-53c0-41c6-963e-5080780e72a3")
 	)
 	(wire
 		(pts
@@ -2178,7 +2444,17 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 57.15) (xy 177.8 57.15)
+			(xy 173.99 54.61) (xy 177.8 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c432add-5509-44ea-9278-5d4059d06a68")
+	)
+	(wire
+		(pts
+			(xy 172.72 57.15) (xy 176.53 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2278,6 +2554,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 63.5) (xy 208.28 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94f670cc-9d8a-427c-ac2d-52913a114ae1")
+	)
+	(wire
+		(pts
 			(xy 143.51 16.51) (xy 146.05 16.51)
 		)
 		(stroke
@@ -2298,7 +2584,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 54.61) (xy 177.8 54.61)
+			(xy 172.72 54.61) (xy 173.99 54.61)
 		)
 		(stroke
 			(width 0)
@@ -2318,13 +2604,33 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 52.07) (xy 177.8 52.07)
+			(xy 154.94 17.78) (xy 207.01 17.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3dfe0de-dd25-476f-ba5d-d937e6bda8ae")
+	)
+	(wire
+		(pts
+			(xy 172.72 52.07) (xy 175.26 52.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c60d1f25-4596-4b2d-89ee-5fb524365bd3")
+	)
+	(wire
+		(pts
+			(xy 201.93 74.93) (xy 208.28 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c635db2e-89bd-455f-8f14-9c6cee8d3a6a")
 	)
 	(wire
 		(pts
@@ -2368,13 +2674,43 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 17.78) (xy 207.01 17.78)
+			(xy 196.85 69.85) (xy 173.99 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7c3377d-c89c-4126-b4e4-eda5c7287306")
+	)
+	(wire
+		(pts
+			(xy 175.26 52.07) (xy 177.8 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e55cee68-3604-4b05-a0e8-302bb8422f6e")
+	)
+	(wire
+		(pts
+			(xy 148.59 17.78) (xy 154.94 17.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ea04486e-d4be-41b6-8a12-b2ddf5d46957")
+	)
+	(wire
+		(pts
+			(xy 201.93 69.85) (xy 208.28 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eecb17a9-3cc7-46f6-9874-dad4d28993ba")
 	)
 	(wire
 		(pts
@@ -2494,7 +2830,7 @@
 			)
 		)
 	)
-	(global_label "5V"
+	(global_label "3.3V"
 		(shape input)
 		(at 242.57 93.98 0)
 		(fields_autoplaced yes)
@@ -2506,7 +2842,7 @@
 		)
 		(uuid "0fd707da-a0ae-46ec-8267-5f64baac1af3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 247.8533 93.98 0)
+			(at 249.6676 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2956,6 +3292,28 @@
 			)
 		)
 	)
+	(global_label "3.3V"
+		(shape input)
+		(at 160.02 19.05 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e9f3bea4-8620-4242-822c-94efc5d3e926")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 167.1176 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape input)
 		(at 242.57 91.44 0)
@@ -2975,6 +3333,74 @@
 				)
 				(justify left)
 				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Capacitors:100nF_Ceramic")
+		(at 199.39 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ca08e9f-c0a0-443b-a18a-b5c17f0154c1")
+		(property "Reference" "C3"
+			(at 202.184 72.898 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF_Ceramic"
+			(at 199.39 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
+			(at 199.39 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100nF Ceramic Capacitor"
+			(at 199.39 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4e62b1e5-62d5-49d5-a510-369fd34b2d92")
+		)
+		(pin "2"
+			(uuid "04ab1f9e-a296-43b0-8393-a0d60a1efa54")
+		)
+		(instances
+			(project "SMACAR MAIN BOARD"
+				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
+					(reference "C3")
+					(unit 1)
+				)
 			)
 		)
 	)
@@ -3190,6 +3616,72 @@
 			(project "SMACAR MAIN BOARD"
 				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
 					(reference "MOLEX3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ea60987-61d4-48d8-a549-7ff90ac55c0d")
+		(property "Reference" "#PWR01"
+			(at 208.28 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 208.28 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 208.28 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30bff1a8-577b-4904-9554-25b42e5eb29d")
+		)
+		(instances
+			(project "SMACAR MAIN BOARD"
+				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -3473,6 +3965,74 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_SL_Capacitors:100nF_Ceramic")
+		(at 199.39 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a7eed5e-1187-4fb1-a041-f0cc0d78a0dc")
+		(property "Reference" "C2"
+			(at 201.93 67.818 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF_Ceramic"
+			(at 199.39 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
+			(at 199.39 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100nF Ceramic Capacitor"
+			(at 199.39 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e3d1a535-0b1a-43fd-a18a-e8e1abe70509")
+		)
+		(pin "2"
+			(uuid "e0d0b807-dd4a-4a06-b690-425bc95b3d2d")
+		)
+		(instances
+			(project "SMACAR MAIN BOARD"
+				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Espressif:ESP32-S3-DevKitC")
 		(at 147.32 64.77 0)
 		(unit 1)
@@ -3732,6 +4292,74 @@
 			(project ""
 				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
 					(reference "MOLEX1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Capacitors:100nF_Ceramic")
+		(at 199.39 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f52ef0ee-18d1-4bc1-aa85-a6ea5aff1f78")
+		(property "Reference" "C1"
+			(at 201.422 59.944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF_Ceramic"
+			(at 199.39 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
+			(at 199.39 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100nF Ceramic Capacitor"
+			(at 199.39 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "391531b7-5aa6-46b9-9534-9c8b2c78dc12")
+		)
+		(pin "2"
+			(uuid "cef5f372-381e-49cf-91f0-c7a45f4a6430")
+		)
+		(instances
+			(project ""
+				(path "/4878f518-0ef3-4f65-a6b2-5ae917900823"
+					(reference "C1")
 					(unit 1)
 				)
 			)
