@@ -61,6 +61,14 @@ Coming soon...
 
 ---
 
+### Diagrama de Flujo
+
+| Transmisor | Receptor                     |
+|--------------------|----------------------|
+| ![Transmisor](Documentacion/Diagrama%20flujo/diagram(1).png) | ![Receptor](Documentacion/Diagrama%20flujo/diagram(2).png) |
+
+---
+
 ## 📁 Estructura del repositorio
 
 ```
