@@ -29,7 +29,7 @@ Coming soon...
 Coming soon...
 | PCB TRANSMISOR                            | PCB RECEPTOR                               |
 |-------------------------------------------|--------------------------------------------|
-| ![PCB MAIN](Hardware/Electronic/.jpg) | ![PCB y conexiones](Hardware/Electronic/SMACAR%20RECEIVER%20BOARD/RENDER.png) |
+| ![PCB MAIN](Hardware/Electronic/SMACAR%20MAIN%20BOARD/RENDER.png) | ![PCB RECEPTOR](Hardware/Electronic/SMACAR%20RECEIVER%20BOARD/RENDER.png) |
 
 ---
 
