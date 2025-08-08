@@ -1993,8 +1993,8 @@
 		(uuid 081f2d06-e018-42d5-ac61-f8701484f394)
 	)
 	(rectangle
-		(start 16.51 12.7)
-		(end 92.71 83.82)
+		(start 35.56 35.56)
+		(end 78.74 60.96)
 		(stroke
 			(width 0)
 			(type default)
@@ -2086,7 +2086,7 @@
 	)
 	(text "ALIMENTACION PLACA"
 		(exclude_from_sim no)
-		(at 56.896 86.36 0)
+		(at 55.88 65.278 0)
 		(effects
 			(font
 				(size 1.27 1.27)
