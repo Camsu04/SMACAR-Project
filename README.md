@@ -114,9 +114,9 @@ SMACAR-Project/
 ## 🛠️ Requisitos
 
 - **ESP32**
-- Sensores de pH, turbidez y TDS
+- Sensores de pH, turbidez,temperatura y TDS
 - Módulo LoRa (compatible ESP32)
-- Fuente solar o alimentación adecuada
+- Fuente solar o alimentación adecuada (3.3v o 5v)
 - Teléfono Android para la app móvil
 
 ---
