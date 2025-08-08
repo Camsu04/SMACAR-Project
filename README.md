@@ -25,11 +25,19 @@ Coming soon...
 
 ---
 
-### Carcasa 3D y electrónica
+### Electronica
 Coming soon...
-| Carcasa ensamblada                       | Electrónica interna                        |
+| PCB TRANSMISOR                            | PCB RECEPTOR                               |
 |-------------------------------------------|--------------------------------------------|
-| ![Carcasa 3D](Documentacion/CARCASA.jpg) | ![PCB y conexiones](Documentacion/ELECTRONICA.jpg) |
+| ![PCB MAIN](Hardware/Electronic/.jpg) | ![PCB y conexiones](Hardware/Electronic/SMACAR%20RECEIVER%20BOARD/RENDER.png) |
+
+---
+
+### Carcasa 3D 
+Coming soon...
+| Transmisor y sensores                     | RECEPTOR                                   |
+|-------------------------------------------|--------------------------------------------|
+| ![Carcasa 3D](Documentacion/CARCASA.jpg) | ![Carcasa](Hardware/) |
 
 ---
 
