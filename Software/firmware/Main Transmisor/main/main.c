@@ -27,7 +27,7 @@
 #define LORA_UART_NUM UART_NUM_1
 #define LORA_UART_TXD GPIO_NUM_17 // TX del ESP32 al RX del Node
 #define LORA_UART_RXD GPIO_NUM_16 // RX del ESP32 al TX del Node
-#define LORA_UART_BAUDRATE 9600
+#define LORA_UART_BAUDRATE 115200
 #define LORA_UART_BUF_SIZE 1024
 #define DEST_ADDR 2
 #define SRC_ADRR 1
@@ -148,8 +148,8 @@ void app_main(void)
     vTaskDelay(pdMS_TO_TICKS(800));
     lorawan_uart_cmd("AT+LORAADDR=1");
     vTaskDelay(pdMS_TO_TICKS(800));
-    lorawan_uart_cmd("AT+DEVADDR=1\r\n"); // Nodo transmisor
-    vTaskDelay(pdMS_TO_TICKS(800));
+    //lorawan_uart_cmd("AT+DEVADDR=1\r\n"); // Nodo transmisor
+    //vTaskDelay(pdMS_TO_TICKS(800));
     lorawan_uart_cmd("AT+FREQS=914900000\r\n"); // US915 canal
     vTaskDelay(pdMS_TO_TICKS(800));
     lorawan_uart_cmd("AT+EIRP=22\r\n");
@@ -211,10 +211,10 @@ void app_main(void)
 
         // Imprimir local
         printf("Voltaje EC: %.2f mV | Voltaje pH: %.2f mV | Voltaje TDS: %.2f mV\n", voltaje_ec, voltaje_ph, voltaje_tds);
-        printf("Temp: %.2f °C | EC: %.2f ms/cm | pH: %.2f | TDS: %.2f ppm\n",
+        printf("Temp: %.2f °C | EC: %.2f us/cm | pH: %.2f | TDS: %.2f ppm\n",
                temperatura, valor_ec, valor_ph, valor_tds);
 
-        vTaskDelay(pdMS_TO_TICKS(5000)); // Esperar 5 segundos
+        vTaskDelay(pdMS_TO_TICKS(2000)); // Esperar 5 segundos
     }
 
     // --- Liberar calibración (nunca se ejecuta por el bucle) ---
@@ -244,10 +244,26 @@ static float leer_adc_mV(adc_oneshot_unit_handle_t handle, adc_cali_handle_t cal
 // --- FÓRMULAS DE CONVERSIÓN ---
 float calcular_ec(float voltaje, float temperatura)
 {
-    float voltage = voltaje / 1000.0; // V
-    float ecValue = (133.42 * voltage * voltage * voltage - 255.86 * voltage * voltage + 857.39 * voltage) * 0.1;
-    float compensation = 1.0 + 0.0185 * (temperatura - 25.0);
-    return ecValue / compensation; // ms/cm
+    // === REFERENCIAS (a 30°C) ===
+    const float REF1_mV = 244.0f;     // en mV
+    const float REF1_uS = 1548.0f;    // en µS/cm
+
+    const float REF2_mV = 3100.0f;    // en mV
+    const float REF2_uS = 14120.0f;   // en µS/cm
+
+    // === Calcular pendiente y ordenada automáticamente ===
+    float m = (REF2_uS - REF1_uS) / (REF2_mV - REF1_mV); // µS/cm por mV
+    float b = REF1_uS - m * REF1_mV;                     // µS/cm
+
+    // === Calcular EC cruda a temperatura actual ===
+    float ec_raw_uS = m * voltaje + b; // en µS/cm, sin compensar
+
+    // === Compensación de temperatura a 25°C ===
+    float factor_comp = 1.0f + 0.0185f * (temperatura - 25.0f);
+    float ec25_uS = ec_raw_uS / factor_comp;
+
+    // === Devolver valor compensado a temperatura actual ===
+    return ec25_uS * factor_comp; // en µS/cm
 }
 
 float calcular_ph(float voltaje, float temperatura)
@@ -261,11 +277,24 @@ float calcular_ph(float voltaje, float temperatura)
 
 float calcular_tds(float voltaje, float temperatura)
 {
-    float voltage = voltaje / 1000.0; // V
-    float compensationCoefficient = 1.0 + 0.02 * (temperatura - 25.0);
-    float compensationVoltage = voltage / compensationCoefficient;
-    float tdsValue = (133.42 * compensationVoltage * compensationVoltage * compensationVoltage - 255.86 * compensationVoltage * compensationVoltage + 857.39 * compensationVoltage) * 0.5;
-    return tdsValue; // ppm
+    // 1) Convertir mV a Voltios
+    float voltage_V = voltaje / 1000.0f;
+
+    // 2) Compensación de temperatura
+    // Fórmula oficial DFRobot: f(25°C) = f(T) / (1.0 + 0.02 * (T - 25))
+    float compensationCoefficient = 1.0f + 0.02f * (temperatura - 25.0f);
+    float compensationVoltage = voltage_V / compensationCoefficient;
+
+    // 3) Conversión de voltaje a TDS (ppm) según curva cúbica del fabricante
+    // Ecuación: TDS(ppm) = (133.42*V³ - 255.86*V² + 857.39*V) * 0.5
+    float tdsValue = (133.42f * compensationVoltage * compensationVoltage * compensationVoltage
+                    - 255.86f * compensationVoltage * compensationVoltage
+                    + 857.39f * compensationVoltage) * 0.5f;
+
+    // 4) Evitar negativos por ruido
+    if (tdsValue < 0) tdsValue = 0;
+
+    return tdsValue; // en ppm
 }
 
 // --- Funciones DS18B20 ---
