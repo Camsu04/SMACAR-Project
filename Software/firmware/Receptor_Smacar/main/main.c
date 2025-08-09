@@ -19,8 +19,8 @@
 #define BUF_SIZE 1024
 
 #define BLYNK_AUTH_TOKEN "UDCOVVtPTGNn6brczRzDivWzspzKN5jG" //---token unico del dashboard
-#define WIFI_SSID "Rottweiler" //---nombre del wifi
-#define WIFI_PASS "Rottweiler051618" //===pass del wifi 
+#define WIFI_SSID "*********" //---nombre del wifi
+#define WIFI_PASS "***********" //===pass del wifi 
 
 // --------Parametros---------
 #define TEMP_MIN 05.0
