@@ -27,7 +27,7 @@
 #define LORA_UART_NUM UART_NUM_1
 #define LORA_UART_TXD GPIO_NUM_17 // TX del ESP32 al RX del Node
 #define LORA_UART_RXD GPIO_NUM_16 // RX del ESP32 al TX del Node
-#define LORA_UART_BAUDRATE 115200
+#define LORA_UART_BAUDRATE 9600
 #define LORA_UART_BUF_SIZE 1024
 #define DEST_ADDR 2
 #define SRC_ADRR 1

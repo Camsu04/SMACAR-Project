@@ -1,0 +1,45 @@
+{
+    "name": "sx127x",
+    "version": "4.0.1",
+    "description": "Library to work with Semtech chips SX1276/SX1277/SX1278/SX1279",
+    "keywords": "sx127x, lora, sx1278, sx1276, sx1277, sx1279",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dernasherbrezon/sx127x.git"
+    },
+    "authors": [
+        {
+            "name": "Andrey Rodionov",
+            "email": "dernasherbrezon@gmail.com",
+            "url": "https://dernasherbrezon.com",
+            "maintainer": true
+        }
+    ],
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/dernasherbrezon/sx127x",
+    "frameworks": "*",
+    "platforms": "espressif32",
+    "export": {
+        "exclude": [
+            "**/build",
+            "**/dist",
+            "**/debug",
+            "**/Debug",
+            "**/sdkconfig",
+            "**/sdkconfig.old",
+            "**/dependencies.lock",
+            "**/cmake-build-*",
+            "**/.idea",
+            "**/.DS_Store",
+            "**/.git",
+            "**/.settings",
+            "**/.gitignore",
+            "**/*_linux_*",
+            "./test",
+            "./.github"
+        ]
+    },
+    "build": {
+        "extraScript": "extra_script.py"
+    }
+}
