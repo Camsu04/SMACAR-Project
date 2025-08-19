@@ -37,7 +37,7 @@ Coming soon...
 
 | Transmisor y sensores                     | RECEPTOR                                   |
 |-------------------------------------------|--------------------------------------------|
-| ![Carcasa 3D](Documentacion/CARCASA.jpg) | ![Carcasa](Documentacion/receptor.jpg) |
+| ![Carcasa 3D](Documentacion/photo_2025-08-19_15-44-15.jpg) | ![Carcasa](Documentacion/receptor.jpg) |
 
 ---
 
